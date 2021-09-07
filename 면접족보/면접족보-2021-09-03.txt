@@ -1,0 +1,230 @@
+1.아래의 프린트 결과를 예측해 보고, 코딩 후 결과를 확인 하시오
+class SCE {
+	public static void main(String[] args) {
+		int num1 = 0;
+		int num2 = 0;
+		boolean result;    
+
+		result = ((num1 += 10) < 0) && ((num2 += 10) > 0);
+    System.out.println("result = " + result);
+    System.out.println("num1 = " + num1);
+    System.out.println("num2 = " + num2 + '\\n'); // "
+	
+    result = ((num1 += 10) > 0) || ((num2 += 10) > 0);
+    System.out.println("result = " + result);
+    System.out.println("num1 = " + num1);
+    System.out.println("num2 = " + num2);
+	}
+}
+
+false
+10
+0
+
+true
+20
+0
+
+
+2. 전위 증가 연산자와 후위 증가 연산자의 차이는?
+전위증가는 먼저 값을 증가시킨 후 값을 저장하는데 비해,
+후위증가는 먼저 저장 후에 값을 증가시킴
+
+
+3.. 아래의 비트 연산자 4가지를 설명하시오.
+& | ^ ~
+순서대로 AND / OR / XOR / NOT
+양쪽 모두 참인 경우 참으로 반환 / 양쪽 중 한쪽이라도 참인 경우 참으로 반환 / 양쪽이 서로다른 경우 참으로 반환 / 
+비트연산자를 반대로 연산(0→1 / 1→0)
+
+
+4. 쉬프트 연산자에 대하여 설명하시오.
+(비트 이동시킬 변수) (연산자) (비트 이동시킬 지정된 단계)
+비트를 지정된 단계씩 이동시키는 연산자이다.
+
+
+5. 아래의 출력값을 예측하시오.
+
+class AssignSteResult {
+	public static void main(String[] args) {
+		int num1 = 10, num2 = 20, num3 = 30;
+		num1 = num2 = num3;    
+    
+    System.out.println(num1);	
+    System.out.println(num2);
+    System.out.println(num3);
+	}
+}
+
+30
+30
+30
+
+6. 아래의 출력값을 예측하시오.
+
+class SCE {
+	public static void main(String[] args) {
+		int num1 = 0;
+		int num2 = 0;
+		boolean result;    
+		num1 += 10;
+    num2 += 10;        
+    result = (num1 < 0) && (num2 > 0);
+
+    System.out.println("result = " + result);
+    System.out.println("num1 = " + num1);
+    System.out.println("num2 = " + num2 + '\n'); //+ "\n"??
+	
+    num1 += 10;
+    num2 += 10;        
+    result = (num1 > 0) || (num2 > 0);
+
+    System.out.println("result = " + result);
+    System.out.println("num1 = " + num1);
+    System.out.println("num2 = " + num2);
+	}
+}
+
+false
+10
+10
+
+true
+20
+20
+
+
+7. 아래의 출력값을 예측하시오.
+class AddNum {
+	public static void main(String[] args) {
+		int result = 3 + 6;
+		System.out.println("3 + 6 = " + result);  
+  
+		result += 9;
+    System.out.println("3 + 6 + 9 = " + result);
+    
+    result += 12;
+    System.out.println("3 + 6 + 9 + 12 = " + result);
+	}
+}
+
+9
+18
+30
+
+
+8.변수 하나를 선언후, 음수이면 false, 양수이면 true 를 출력 하시오
+
+출력:
+10는 true입니다.
+
+boolean bool;
+bool = (10 > 0) ? (true) : (false);
+System.out.println(bool);
+
+
+9. 아래의 수를 선언후 가장 큰수를 출력하는 프로그램을 작성 하시오.
+ 
+int n1 = 100;
+int n2 = 90;
+int n3 = 80;
+
+(13번과 비슷해서 패스)
+
+
+10. 조건문의 3가지 종류를 나열하고 설명하시오.
+if~else
+ - if(조건문) ~ else 의 구조를 가진다.
+ - if문의 조건문이 참이면 if문 안의 내용을 실행, 그렇지 않으면 else문 안의 내용을 실행한다.
+
+switch~case
+ - switch(변수) {case : (실행문) case : (실행문) ....default : (실행문)} 의 구조를 가진다.
+ - switch문의 변수값에 해당하는 case값을 실행한다.
+ - case 및 default 영역을 벗어나려면 break; 를 사용해야한다.
+
+삼항연산자
+ - (조건문) ? (참인 경우 실행) : (거짓인 경우 실행) 의 구조를 가진다.
+
+
+11 아래의 프로그램을 짜시오.
+
+ 국어:80 수학:80 영어:60 총점과 평균을 출력하고, 평균에 따른 수우미양가를 출력 하시오.
+int kor = 47;
+		int math = 45;
+		int eng = 50;
+		double avg = 0;
+		
+		avg = (kor+math+eng)/3.0;
+		
+		if(avg>=90) System.out.println("평균점수 : " + avg + " [수] 입니다.");
+		else if(avg>=80) System.out.println("평균점수 : " + avg + " [우] 입니다.");
+		else if(avg>=70) System.out.println("평균점수 : " + avg + " [미] 입니다.");
+		else if(avg>=60) System.out.println("평균점수 : " + avg + " [양] 입니다.");
+		else System.out.println("평균점수 : " + avg + " [가] 입니다.");
+
+
+
+12. int num = 33 할당 후 해당 숫자 짝수면 짝수 입니다 출력. 홀수면 홀수 출력
+
+int number =33;
+		
+if(number%2==0) System.out.println("number 는 [짝수] 입니다.");
+else System.out.println("number 는 [홀수] 입니다.");
+
+
+13.아래를 삼항연산자를 사용하여 프로그래밍 하시오.
+
+80, 33 ,55 최대값을 출력하시오.
+
+int num11 = 80;
+int num22 = 33;
+int num33 = 55;
+int temp = 0;
+		
+temp = (num11 > num22) ? (num11) : (num22);
+temp = (temp > num33) ? (temp) : (num33);
+
+System.out.println("가장 큰 수 : " + temp);
+
+
+14. switch 문에서 '걸어서 하늘까지' 를 설명하시오.
+case문 안에서 break가 걸릴때까지 모든 내용을 실행하기 때문에
+도중에 실행을 중단해야하는 지점에 break를 사용해야 switch~case문을 종료하고 밖으로 나간다.
+
+
+15.int num = -10 을 할당 후 해당 정수에 대한 절댓값을 출력하는 프로그램을 작성하시오.
+int num = -10
+int diff;
+
+diff = (num > 0) ? (num - 0) : (0 - num);
+System.out.println("절댓값 : " + diff);
+
+
+16.복습
+HelloWorld.java 소스코드 작성후 컴파일 및 실행되는 과정을 설명하시오.
+
+
+
+17. 아래의 프로그램을 짜시오
+홀,짝 판별 프로그램
+ - 오전에 작성했던 프로그램의 확장버전
+
+int형 변수 하나를 선언하여 값 입력
+입력된 값이 0~100 이내의 범위에서 홀수인지 짝수인지를 판별
+
+
+실행결과 :
+
+3 (은)는 0~100 사이의 정수입니다.
+3 (은)는 [홀수] 입니다.
+
+8 (은)는 0~100 사이의 정수입니다.
+8 (은)는 [짝수] 입니다.
+
+0 (은)는 0~100 사이의 정수입니다.
+0은 짝수도 홀수도 아닙니다.
+
+입력된 숫자 : -4
+0~100 사이의 숫자만 입력해주세요.
+
+프로젝트명 : InterView_004
