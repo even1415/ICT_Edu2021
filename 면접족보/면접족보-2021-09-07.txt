@@ -1,14 +1,62 @@
 1. 반복문에서 while 문과 do while 문의 차이는?
+do~while문은 실행문을 반드시 1회 실행하는 반면, while문은 조건을 체크한 후 실행문을 실행한다.
+
 2. for 문에서 for 문이 실행되는 순서를 설명하시오.
+for(int i=0; i<10; i++) { (실행문) }
+위를 예시로 들어보면,
+int 형의 i를 먼저 선언하고 0으로 초기화 후, 실행문을 실행하고나서
+i++ 부분에서 i를 1 더한 후 i<10 에서 i가 10 미만인지를 검사한다.
+그리고 i가 10 미만(조건문이 참)이라면 다시 실행문을 실행한다.
+
 3. 반복문에서의 break 와 continue 를 설명하시오.
+break는 반복문 내에서 반복을 중단하고 빠져나가는 예약어이고
+continue는 반복문 내에서 반복을 중단하고 조건문으로 돌아가는 예약어이다.
 
-4.아래를 프로그래밍 하시오.
-5.1부터 100 까지의 합
-6.1 부터 100까 사이의 홀수 의 합
-7.1 부터 100까 사이의 짝수 의 합
 
-8.과 1000 사이의 숫자 중 3의 배수 이자 5의 배수인 첫 번째 수는?
-9.과 1000 사이의 숫자 중 2의 배수 이자 3의 배수인 수는 모두 몇 개인가?
+5. 1부터 100 까지의 합
+int total = 0;
+for(int i=1; i<=100; i++) total += i;
+System.out.println(total);
+
+
+6. 1부터 100 사이의 홀수 의 합
+int total = 0;
+for(int i=1; i<=100; i++) if(i%2!=0) total += i;
+System.out.println(total);
+
+
+7. 1부터 100 사이의 짝수 의 합
+int total = 0;
+for(int i=1; i<=100; i++) if(i%2==0) total += i;
+System.out.println(total);
+
+
+8. 1과 1000 사이의 숫자 중 3의 배수 이자 5의 배수인 첫 번째 수는?
+int num = 1;
+boolean search = false;
+		
+while(num<1000) {
+	if((num%5==0) && (num%7==0)) {
+		search = true;
+		break;
+	}
+	num++;
+}
+if(search) System.out.println("찾는 정수 : " + num);
+
+
+9. 1과 1000 사이의 숫자 중 2의 배수 이자 3의 배수인 수는 모두 몇 개인가? [총 166개]
+int num = 0;
+int count = 0;
+		
+while(num++ < 1000) {
+	if(num%2!=0 || num%3!=0) continue;
+	count++;
+	System.out.println(num);
+}
+System.out.println("count : " + count);
+
+
 
 10.. 화폐 매수 구하기
 
@@ -21,21 +69,53 @@
 오백원: 1개
 백원: 0개
 
+프로젝트명 : 2021-09-07 (반복문 사용 o,x 각각)
+
+
 11.아래를 프로그래밍 하시오.
 영희가 은행에 500원 (원금)을 입금했다. 하루에 1원씩 이자가 붙는다. 5일 후(일수) 잔액은 얼마가 되어 있을까?
 
+프로젝트명 : 2021-09-07
+
+
 12.구구단을 찍으시오.
+for(int i=1; i<=9; i++) {
+	for(int j=1; j<=9; j++) {
+	System.out.println(i + " * " + j + " = " + i*j);
+}
+
 13.짝수단을 찍으시오.
+for(int i=1; i<=9; i++) {
+	for(int j=1; j<=9; j++) {
+	if(i%2==0) System.out.println(i + " * " + j + " = " + i*j);
+}
+
 14.결과값이 홀수 인 값만 찍으시오.
+for(int i=1; i<=9; i++) {
+	for(int j=1; j<=9; j++) {
+	if((i*j)%2!=0) System.out.println(i + " * " + j + " = " + i*j);
+}
+
+
 15,아래의 별을 찍으시오.
 *****
 *****
 *****
 *****
 *****
+
+for(int i=0; i<5; i++)
+	for(int j=0; j<5; j++) System.out.print("*");
+	System.out.println();
+
+
 15,아래의 별을 찍으시오.
 *
 **
 ***
 ****
 *****
+
+for(int i=0; i<5; i++)
+	for(int j=0; j<i+1; j++) System.out.print("*");
+	System.out.println();
