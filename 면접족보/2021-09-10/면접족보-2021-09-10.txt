@@ -1,0 +1,212 @@
+1.인스턴스 변수란?
+ - 클래스 내에 정의된 변수. 인스턴스가 생성될 때 생성되는 변수이다.
+
+
+2. 지역 변수란?
+ - 메소드(함수) 안에 정의된 변수. 변수 선언문이 실행될 때 생성되는 변수이다.
+만약 메소드가 끝나면 소멸되어 더이상 사용할 수 없게 된다.
+
+
+3. 클래스의 구성 요소는?
+ - 생성자 / 필드(클래스변수,인스턴스변수,지역변수) / 메소드
+
+
+4.원의 넓이는 구하는 프로그램**을 아래와 같이 작성하시오.
+- 원 클래스를 만들 것
+- 메인 메소드를 가진 다른 클래스에서 원 객체를 생성할 것
+class Circle {
+	private int radius;
+	
+	public Circle(int radius) { //생성자
+		this.radius = radius;
+	}
+	
+	public double getArea() {
+		return radius * radius * Math.PI;
+	}
+}
+
+//↓메인함수 내 호출 및 출력
+Circle circle = new Circle(10);	
+System.out.println(circle.getArea());
+
+
+5.사각형의 넓이를 구하는 프로그램
+- 사각형 클래스를 만들 것
+- 메인 메소드를 가진 다른 클래스에서 사각형 객체를 생성할 것
+class Rectangle {
+	private int width;
+	private int height;
+	
+	public Rectangle(int width, int height) { //생성자
+		this.width = width;
+		this.height = height;
+	}
+	
+	public int getArea() {
+		
+		return width*height;
+	}
+}
+
+//↓메인함수 내 호출 및 출력
+Rectangle rectangle = new Rectangle(10, 20);
+System.out.println(rectangle.getArea());
+
+
+6.성적표 구하는 프로그램을 만드시오.
+- Grade 클래스 
+- 국영수 인스턴스 변수(각각의 setter getter 함수)
+-getTotal() ,getAvg()
+- 메인 메소드를 가진 다른 클래스에서 Grade 객체 
+객체를 생성한다는 것은 해당 클래스의 .class 파일을 메모리에 올린다는 것을 의미한다.
+
+public class Grade {
+	int kor;
+	int math;
+	int eng;
+	
+	public void setter(int kor, int math, int eng) {
+		this.kor = kor;
+		this.math = math;
+		this.eng = eng;
+	}
+	
+	public int getTotal() {
+		return kor+math+eng;
+	}
+	
+	public double getAvg() {
+		return (kor+math+eng)/3.0;
+	}
+	
+	public void getter() {
+		System.out.println("합계 : " + getTotal());
+		System.out.println("평균 : " + getAvg());
+	}
+}
+
+//↓메인함수 내 호출 및 출력
+Grade grade = new Grade();		
+grade.setter(80, 70, 80);
+grade.getter();
+
+
+7. 객체란 무엇인가?
+ - 물리적으로 존재하거나 추상적으로 생각할 수 있는 것 중에서
+자신의 속성을 가지고 있고 다른 것과 식별 가능한 것
+
+8. 아래의 클래스에 대하여, 메모리 그림을 그리시오.
+Rectangle r = new Rectangle(); 
+public class Rectangle {
+int height;
+int width;
+
+public int getHeight() {
+	return height;
+}
+
+public void setHeight(int height) {
+	this.height = height;
+}
+
+public int getWidth() {
+	return width;
+}
+
+public void setWidth(int width) {
+	this.width = width;
+}
+
+public int getArea() {
+	return width * height;
+}
+
+
+9. 클래스와 객체의 차이는?
+ - 클래스는 설계도, 객체는 설계도로 구현한 대상 을 의미
+ - 클래스로 객체를 만드는 것을 "인스턴스화" 라고 한다.
+
+
+10. 아래의 프로그램을 작성하시오.
+- 1 부터 num 까지 합을 구하는 class 를 작성하도록 하시오.
+
+1) 합을 구할 수 있는 GetSum클래스를 통해 getsum 객체를 생성
+2) num 까지의 합을 구해야 하므로 num값이 변할 수 있도록 num 변수를 선언
+예를 들어서 50까지의 합을 구하기 위해 num변수에  50을 대입
+3) getsum객체의 setNum함수를 이용해  num(여기서는 50)값 저장
+4) getsum객체의 sum함수를 이용해 1부터 50(num)까지의 값을 구함
+
+public class GetSum {
+	int num;
+	
+	public void setNum(int num) {
+		this.num = num;
+	}
+	
+	public int sum() {
+		int sumNum = 0;
+		
+		for(int i=0; i<=this.num; i++)
+			sumNum += i;
+		
+		return sumNum;
+	}
+}
+
+//↓메인함수 내 호출 및 출력
+GetSum getSum = new GetSum();
+getSum.setNum(50);
+System.out.println(getSum.sum());
+
+
+11. 아래의 클래스를 작성하시오.
+StarPrint strPrint = new StarPrint();
+
+strPrint.printTriangle(3); 
+System.out.println();
+strPrint.printReverseTriangle(3); 
+
+*
+**
+***
+
+***
+**
+*
+
+public class StarPrint {
+	public void printTriangle(int num) {
+		for(int i=1; i<=num; i++) {
+			for(int j=0; j<i; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+	
+	public void printReverseTriangle(int num) {
+		for(int i=1; i<=num; i++) {
+			for(int j=num; j>=i; j--) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+}
+
+
+12. 아래의 프로그래밍을 작성하시오.
+Gugudan gugudan = new Gugudan();
+gugudan.printGugu(10);  //1단부터 10단까지 출력
+gugudan.printGugu(20);  //1단부터 20단까지 출력
+
+public class Gugudan {
+	public void printGugu(int num) {
+		for(int i=1; i<=num; i++) {
+			for(int j=1; j<=9; j++) {
+				System.out.println(i + " * " + j + " = " + i*j);
+			}
+		}
+	}
+}
