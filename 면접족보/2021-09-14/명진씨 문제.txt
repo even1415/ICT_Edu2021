@@ -1,0 +1,15 @@
+1부터 n번째까지의 11의 배수 이거나 14의 배수의 갯수
+아래의 Multiplse 클래스를 완성하시오.
+
+메인 메소드 안에 //처음 클래스 명은 아무거나 해도 됩니다.
+
+  Multiples multiples = new Multiples();
+  multiples.setNum(10000);  
+  multiples.getAnswer();
+  system.out.println();
+출력은 
+1에서 10000까지의 숫자 중 12의 배수이면서 14의 배수의 갯수는 몇개입니다.
+setNum 에 1000을 넣엇을경우
+1에서 1000까지의 숫자 중 12의 배수이면서 14의 배수의 갯수는 몇개 입니다.
+
+프로젝트명 : InterView_005 / 클래스명 : Multiples
