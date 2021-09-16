@@ -76,6 +76,12 @@ class AlpabetString {
 	private int num3 = 0;
 	private String string;
 	public char ch;
+	
+	public void reset() {
+		this.num1 = 0;
+		this.num2 = 0;
+		this.num3 = 0;
+	}
 
 	private void input() {
 		Scanner scanner = new Scanner(System.in);
@@ -124,6 +130,7 @@ class AlpabetString {
 			System.out.println("종료하시겠습니까? 종료:y");
 			ch = scanner.next().charAt(0);
 			if(ch=='y') break;
+			else reset();
 		}
 	}
 }
