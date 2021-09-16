@@ -1,0 +1,212 @@
+1. 메소드 오버로딩이란?
+메소드 오버로딩이란 같은 이름의 다른 메소드에서 인자의 개수가 다르거나 인자의 자료형이 다를때
+해당 형태에 맞는 메소드를 실행할 수 있는 것을 말한다.
+System.out 에 정의되어 있는 println 메소드를 예를 들면,
+매개변수로 받는 자료형에 따라 각각 오버로딩 되어있기 때문에
+사용자가 어떤 자료형을 넣어도 println 메소드로 출력 기능을 실행할 수 있다.
+
+
+2. 생성자 오버로딩이란?
+생성자의 오버로딩을 통해 같은 기능을 수행하는 같은 이름을 가진 클래스 내의 다른 매개변수 자료형들을 처리할 수 있다.
+
+
+3. 메소드 오버로딩을 적용한 대표적인 함수는?
+System.out.println();
+
+4. this의 용도는?
+ - this 메소드 : 자체 생성자를 호출
+ - this.(변수) : 해당 클래스 내의 인스턴스 변수를 호출
+
+
+5. this 함수에 대하여 설명하시오.
+ - 클래스 내에서 자체 생성자를 호출
+
+
+6. 스트링 객체를 생성하는 2가지 방법은?
+new 예약어를 사용해서 객체 생성 / ""으로 직접 값을 넣으며 객체 생성
+
+
+7. 아래의 결과를 예측하고,이유를 설명하시오.
+
+String str1 = "Simple String"; 
+String str2 = "Simple String";
+
+String str3 = new String("Simple String");
+String str4 = new String("Simple String");
+
+//참조변수의 참조 값 비교
+if(str1 == str2)
+   System.out.println("str1과 str2는 동일 인스턴스 참조");
+else
+   System.out.println("str1과 str2는 다른 인스턴스 참조");
+
+//참조변수의 참조 값 비교
+if(str3 == str4)
+   System.out.println("str3과 str4는 동일 인스턴스 참조");
+else
+   System.out.println("str3과 str4는 다른 인스턴스 참조");
+
+---실행결과 예상---
+str1과 str2는 동일 인스턴스 참조
+str3과 str4는 다른 인스턴스 참조
+
+이유 : ""로 즉시 초기화한 경우 같은 텍스트의 주소를 참조하게 되지만
+new로 객체를 생성한 경우 각 객체가 별개의 주소를 할당받기 때문
+따라서 == 연산자로 주소값을 비교하면 값이 다르다.
+
+
+8. immutable 에 대하여 설명하시오. (String 예시를 들어서 설명)
+ - String은 참조형이기 때문에, 다른 값을 넣었을 때 값이 바뀌지 않고 주소값이 변경되어 다른 값을 출력하게 된다.
+예시)
+String s = "hello1";
+s += "hello2";
+system.out.println(s);
+
+s 의 값이 "hello1hello2" 가 되는 것이 아닌, "hello1hello2" 에 해당하는 메모리를 새로 할당한 후
+이 메모리의 주소값을 s에 저장한 후 출력하게 된다.
+즉, "hello1" 과 "hello2" 에 할당된 메모리가 소멸되지 않는다.
+
+
+9. 사용자로부터 받은 문자열(영문으로)에서 자음과 모음 개수를 계산하는 프로그램을 작성하라.
+(연속적으로 종료하시겠습니까 y 할때 까지 계속)
+
+class AlpabetString {
+	private int num1 = 0;
+	private int num2 = 0;
+	private int num3 = 0;
+	private String string;
+	public char ch;
+
+	private void input() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("단어를 입력하세요.");
+		string = scanner.nextLine(); // 한줄 전체를 입력받음(단어 단위는 next() 사용)
+	}
+
+	private void alpabetCount() {
+		for (int i = 0; i < string.length(); i++) {
+			char ch = string.charAt(i);
+
+			switch (ch) {
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+			case 'A':
+			case 'E':
+			case 'I':
+			case 'O':
+			case 'U':
+				num1++;
+				break;
+			case ' ':
+				num3++; // 공백 처리
+				break;
+			default:
+				num2++;
+				break;
+			}
+		}
+	}
+
+	private void getCount() {
+		System.out.println("모음 : " + num1 + "개, 자음 : " + num2 + "개");
+	}
+
+	public void run() {
+		Scanner scanner = new Scanner(System.in);
+		while (true) {
+			input();
+			alpabetCount();
+			getCount();
+
+			System.out.println("종료하시겠습니까? 종료:y");
+			ch = scanner.next().charAt(0);
+			if(ch=='y') break;
+		}
+	}
+}
+
+-----------아래는 main부----------
+AlpabetString alpabetString = new AlpabetString();
+alpabetString.run();
+
+
+10.사용자에게 받은 문자열을 역순으로 화면에 출력하는 프로그램을 작성하시오.
+입력:abcde
+출력:edcba
+
+class ReverseString {
+	private String string;
+//private String revString = "";
+
+	private void input() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("입력 : ");
+		string = scanner.next();
+
+		scanner.close();
+	}
+
+	private void printReverse() {
+		System.out.print("출력 : ");
+		for (int i = 0; i < string.length(); i++) {
+			System.out.print(string.charAt(string.length() - i - 1)); //즉시 출력
+			//revString += string.charAt(string.length() - i - 1); //변수에 저장 후 출력(1)
+		}
+		//System.out.print(revString); //변수에 저장 후 출력(2)
+	}
+
+	public void run() {
+		input();
+		printReverse();
+	}
+}
+
+-----------아래는 main부----------
+ReverseString reverseString = new ReverseString();
+reverseString.run();
+
+
+11.2와 100 사이에 있는 모든 소수(prime number)를 찾는 프로그램을 작성하라. 
+(주어진 정수 k를 2부터 k-1까지의 숫자로 나누어서 나머지가 0인 것이 하나라도 있으면 소수가 아니다.)
+class FindPrimeNumber {
+	int k;
+	boolean bool;
+
+	public FindPrimeNumber() {
+		this.k = 0;
+		this.bool = false;
+	}
+
+	private void input() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("입력 : ");
+		k = scanner.nextInt();
+
+		scanner.close();
+	}
+	
+	private void FindPrime() {
+		for(int i=2; i<=k; i++) {
+			for(int j=2; j<=i-1; j++) {
+				if(i%j==0) {
+					bool = true;
+					break;
+				}
+			}
+			if(bool==false) System.out.print(i + " ");
+			bool = false;
+		}
+	}
+	
+	public void run() {
+		input();
+		FindPrime();
+	}
+}
+
+-----------아래는 main부----------
+FindPrimeNumber findPrimeNumber = new FindPrimeNumber();
+findPrimeNumber.run();
