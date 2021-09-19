@@ -1,0 +1,69 @@
+1.String 클래스에서 concat 메서드를 설명하시오.
+ - 문자열을 이어붙히는 함수 (String 간의 + 연산과 동일)
+
+
+2.str.substring(2, 4); substring 사용법에 대하여 설명하시오.
+ - str에 저장된 문자열 중, 2번째부터 4번째 인덱스 내용을 리턴값으로 반환한다.
+
+
+3. st1.compareTo(st2);compareTo 사용법에 대하여 설명하시오.
+ - str1과 str2 중 사전에 위치하는 순서에 따라 -1, 0, 1 값을 반환한다.
+ - 사전에 위치하는 순서가 str1이 앞인 경우 1, str2가 앞인 경우 -1, 같은 경우 0을 반환한다.
+
+
+4.아래의 연산 과정에서 호출되는 함수(원리)를 써서 표현해 보세요.
+String str = "age" + 17;
+
+String str = "age".concat(String.valueOf(17));
+자동 형변환에 의해 17 이라는 int값이 String 으로 변환된 후
+이어붙이기 연산인 concat 메소드가 컴파일러에 의해 자동 호출된다.
+
+
+6. StringBuilder 와 String 의 차이는?
+ - String은 불변(immutable)하기 때문에, 한번 생성된 내용은 메모리에 계속 남아있는다.
+
+
+7. String 을 이용하여 프로그래밍 하시오.
+String 함수중에서 해결해 보세요. 
+입력 : 990925-1012999
+출력 : 990925 1012999
+
+프로젝트명 : InterView_007 / 클래스명 : StringIDCardNumber
+
+
+8.아래의 메모리 그림을 그리시오. (1차원 배열)
+int[] ar1 = new int[5];
+
+배열 메모리그림.PNG 파일 참조(자료형은 다르나, 구조는 비슷함)
+
+
+9. 아래를 프로그래밍 하시오.
+"Hello.java" 문자열에서 파일명과 확장자인 java를 분리시키는 프로그램을 짜시오.
+
+입력: Hello.java
+출력: 파일이름은: Hello 이며 확장자는 java 입니다.
+
+입력: Java.avi
+출력: 파일 이름은: Java 이며 확장자는 avi 입니다.
+
+프로젝트명 : InterView_007 / 클래스명 : FindFileExtension
+
+
+10. 배열의 디폴트 초기화 방법은?
+ - 3가지 방법이 있다.
+ - ① int arr[] = new int[3];
+ - ② int arr[] = new int[] {(지정값), (지정값), (지정값)};
+ - ③ int arr[] = {(지정값), (지정값), (지정값)};
+
+
+11.로또 프로그램을 작성하시오.
+ -(int)(Math.random()*45+1);  //random 함수 사용 할것
+ -로또번호 6개를 출력 하면 됨(번호가 중복 되면 안됩니다)
+
+프로젝트명 : InterView_007 / 클래스명 : Lotto
+
+
+12.배열에 10개를 선언후 1~1000 랜덤으로 정수를 넣어, 그중 MIN
+값을 출력하는 프로그램을 작성하시오.
+
+프로젝트명 : InterView_007 / 클래스명 : FindMinRandomNum
