@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+class DivFileName {
+	private String input;
+	private String fileName;
+	private String extention;
+
+	public void input() {
+		System.out.println("파일 이름을 입력하세요. (파일명.확장자)");
+		Scanner sc = new Scanner(System.in);
+		input = sc.next();
+	}
+
+	public int findDot() {
+
+		int dot = 0;
+		for (int i = 0; i < input.length(); i++) {
+			if (input.charAt(i) == '.') {
+				dot = i;
+				break;
+			}
+		}
+
+		return dot;
+	}
+
+	public void divExtention() {
+		int dot = findDot();
+		fileName = input.substring(0, dot);
+		extention = input.substring(dot + 1, input.length());
+	}
+	
+	public void resultPrint() {
+		System.out.println("파일 이름은: " + fileName + " 이며 확장자는 " + extention + " 입니다.");
+	}
+	
+	public void run() {
+		input();
+		divExtention();
+		resultPrint();
+	}
+
+}
+
+class ArrayIsInstance {
+	public static void main(String[] args) {
+		
+		DivFileName div = new DivFileName();
+		div.run();
+		
+		/*
+		// 입력
+		System.out.println("파일 이름을 입력하세요. (파일명.확장자)");
+		String input;
+		Scanner sc = new Scanner(System.in);
+		input = sc.nextLine();
+
+		// .찾기
+		int dot = 0;
+		for (int i = 0; i < input.length(); i++) {
+			if (input.charAt(i) == '.') {
+				dot = i;
+				break;
+			}
+		}
+
+		// 분리하는 부분
+		String fileName = input.substring(0, dot);
+		String extention = input.substring(dot + 1, input.length());
+
+		// 정답출력
+		System.out.println("파일 이름은: " + fileName + " 이며 확장자는 " + extention + " 입니다.");
+		*/
+	}
+}
