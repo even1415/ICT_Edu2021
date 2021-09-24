@@ -56,6 +56,14 @@ public class Lotto {
 			}
 		}
 	}
+	//아래처럼 작성도 가능
+//	private void setLotto() {
+//		for (int i = 0; i < 6; i++) {
+//			lottoNum[i] = (int) (Math.random() * 45 + 1);
+//			for (int j = 0; j < i; j++)
+//				if (lottoNum[i] == lottoNum[j]) i--;
+//		}
+//	}
 	
 	private void getLotto() {
 		for(int i=0; i<6; i++) {
