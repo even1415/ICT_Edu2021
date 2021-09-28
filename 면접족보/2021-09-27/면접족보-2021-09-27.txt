@@ -1,0 +1,135 @@
+1. is a 관계와 has a 관계에 대하여 설명하시오.
+ - IS-A관계는 "~는 ~이다."가 성립되는 관계이고, HAS-A관계는 "~는 ~이다."가 성립되는 관계이다.
+다음 상속관계를 살펴보자.
+
+public class Human{
+	String name; // 이름
+	int age; // 나이
+	int sex; // 성별
+}
+public class Studentextends Human{
+	int number; // 학번
+	int major; // 전공
+}
+
+위의 상속 관계에서는 학생클래스가 사람클래스를 상속받고 있다.
+"학생은 사람이다". 이러한 관계를 위처럼 표현했을 때 IS-A관계 라고 한다.
+이어서 다음 상속관계를 살펴보자.
+
+public class Gun{
+	String name; // 총 이름
+	int shot; // 총알 수
+}
+public class Police{
+	Gun gun; // 멤버객체로 총을 갖는다.
+}
+
+위와 같이 "경찰은 총을 가진다."의 구조로
+경찰클래스안에 권총클래스의 객체를 멤버로 가지고 있는 경우를 HAS-A 관계라고 한다.
+
+※출처: https://shelob.tistory.com/entry/IS-AHAS-A
+
+
+2. 다형성(polymorphism)이란 무엇인가?
+ - 하나의 객체가 여러 가지 타입을 가질 수 있는 것
+
+
+3. 아래가 되지 않는 이유에 대하여 메모리 그림으로 설명하시오.
+//소스코드는 오늘 소스 코드 내용을 참조해 주세요.
+//MobilePhone(부모) SmartPhone(자식)
+SmartPhone ph2 = new MobilePhone();
+
+※족보문제 3번 해답(1)(2).PNG 참조
+
+
+4.오버로딩 vs 오버라이딩 에 대하여 설명하시오.
+① 오버로딩(Overloading)
+- 메서드의 이름은 같고 매개변수의 갯수나 타입이 다른 함수를 정의하는 것을 의미한다.
+- 리턴값만을 다르게 갖는 오버로딩은 작성 할 수 없다.
+
+② 오버라이딩(Overriding)
+- over + ride =  먼가 위에서 (라이딩 한다)달린다???
+- 상위 클래스의 메서드를 하위 클래스가 재정의 하는 것이다.
+- 메서드의 이름은 물론 파라메터의 갯수나 타입도 동일해야 하며
+주로 상위 클래스의 동작을 상속받은 하위 클래스에서 변경하기 위해 사용된다.
+
+즉,
+오버로딩(Overloading)은 기존에 없던 새로운 메서드를 정의하는 것이고,
+오버라이딩(Overriding)은 상속 받은 메서드의 내용만 변경 하는 것이다.
+
+※출처: https://88240.tistory.com/450
+
+
+5. 다음을 만족하는 클래스 Employee를 작성하시오. Series _01 (필수)
+	(★6번 문제는 이것과 관련된 문제입니다.)
+- 클래스 Employee(직원)은 클래스 Regular(정규직)와 Temporary(비정규직)의 상위 클래스
+- 필드: 이름, 나이, 주소, 부서, 월급 정보를 필드로 선언
+- 생성자 : 이름, 나이, 주소, 부서를 지정하는 생성자 정의
+- 메소드 printInfo() : 인자는 없고 자신의 필드 이름, 나이, 주소, 부서를 출력
+
+class Employee {
+	private String name;
+	private int age;
+	private String address;
+	private String section;
+	private int salary;
+	
+	public Employee() {
+		
+	}
+	
+	public Employee(String name, int age, String address, String section) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.address = address;
+		this.section = section;
+	}
+	
+	protected void setter(int salary) {
+		this.salary = salary;
+	} //6번 문제에서 사용
+	
+	protected int getter() {
+		return this.salary;
+	} //6번 문제에서 사용
+
+	protected void printInfo() {
+		System.out.println("---직원정보---");
+		System.out.println("이름 : " + this.name);
+		System.out.println("나이 : " + this.age);
+		System.out.println("주소 : " + this.address);
+		System.out.println("부서 : " + this.section);
+	}
+}
+
+프로젝트명 : java_2021_09_27 / 클래스명 : java_2021_09_27 (6~7번 문제)
+
+
+6 다음을 만족하는 클래스 Regular를 작성하시오. Series_02 (필수)
+
+- 클래스 Regular는 위에서 구현된 클래스 Employee의 하위 클래스
+- 생성자 : 이름, 나이, 주소, 부서를 지정하는 상위 생성자 호출
+- Setter : 월급 정보 필드를 지정
+- 메소드 printInfo() : 인자는 없고 "정규직"이라는 정보와 월급을 출력
+
+class Regular extends Employee {
+	
+	public Regular(String name, int age, String address, String section, int salary) {
+		super(name, age, address, section);
+		super.setter(salary);
+	}
+	
+	@Override
+	protected void printInfo() {
+		System.out.println("직업분류 : 정규직");
+		super.printInfo();
+		System.out.println("월급 : " + super.getter());
+	}
+}
+
+프로젝트명 : java_2021_09_27 / 클래스명 : java_2021_09_27 (6~7번 문제)
+
+
+7. 프로그래밍 (자바의 정석: 연습 문제 56page)
+프로젝트명 : Exercise7_19 / 클래스명 : Exercise7_19
