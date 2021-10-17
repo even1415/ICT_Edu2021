@@ -1,0 +1,84 @@
+프로젝트 및 메인클래스명 : MyRPG
+
+★캐릭터 객체 Character 클래스 구현
+ - 본인 닉네임을 저장할 변수 nickName 포함 (String 형)
+ - 캐릭터 성장 변수 Level, EXP 포함 (모두 int 형)
+ - 각 스테이터스 변수 HP, MP, ATK, DEF 포함 (모두 int 형)
+ - 소지금액 변수 myGold 포함 (int 형)
+ - 착용장비 관련 변수 equipName, equipCode (각각 String, int 형)
+ - 모든 변수는 settter와 getter를 가짐(ALT+SHIFT+S,R 단축키 활용)
+    └단, setNickName 에서 닉네임을 Scanner로 입력받음
+    └단, setEXP 에서 전투 패배 시 패널티 내용을 적용받음
+ - 생성자 : Level 은 1, HP는 50, MP는 10, ATK는 10, DEF는 1, EXP와 myGold는 0, equipName은 "없음", equipCode는 0으로 초기화
+ - PutEquip 메소드 : 장비아이템을 착용하는 메소드(장비의 능력치를 캐릭터에게 더해줌)
+   └equipName과 equipCode는 착용한 장비의 정보가 나오도록 함
+    └이외 스테이터스 4종은 캐릭터의 스테이터스에 더해줌
+ - gainEXP 메소드 : 몬스터 처치했을 때 경험치를 얻는 메소드, LevelUp 메소드를 실행한다.
+ - gainGold 메소드 : 몬스터 처치했을 때 골드(소지금액)를 얻는 메소드
+ - LevelUp 메소드 : 경험치가 100이 되면 레벨업 하는 메소드. 캐릭터 스텟이 소폭 오른다. (체력+50, 공격력+10, 방어력+2)
+
+◆Character 클래스를 상속하는 직업 객체 Warrior, Magician, Archer 클래스 구현
+ - 착용가능 Weapon : Warrior : 검 / Magician : 스태프 / Archer : 활 (직업군이 맞지 않으면 착용이 불가능해야함)
+※직업군에 관계없이 Armor는 공통 착용가능
+※장비는 1개만 착용한다고 가정(무기,갑옷 통틀어서)
+
+
+★장비 객체 Equipment 클래스 구현
+ - 장비 고유코드 변수 equipCode 포함 (int 형) : 검 종류 100번대, 스태프 종류 200번대, 활 종류 300번대, Armor 종류 400번대
+ - 장비 이름 변수 equipName 포함 (String 형)
+ - 장비 스테이터스 변수 equipHP, equipMP, equipATK, equipDEF 포함(int 형)
+ - 모든 변수는 settter와 getter를 가짐(ALT+SHIFT+S,R 단축키 활용)
+ - 생성자 : 모든 변수의 내용을 인자로 받아서 채워넣음(ALT+SHIFT+S,O 단축키 활용)
+
+
+★몬스터 객체 Monster 클래스 구현
+ - 몬스터 이름 변수 mobName 포함 (String 형)
+ - 몬스터 구분 변수 gradeMob 포함 (모두 int 형) : 일반몬스터는 1~3, 보스몬스터는 10
+ - 몬스터 스테이터스 변수 Level, HP, MP, ATK, DEF 포함 (모두 int 형)
+ - 몬스터 처치 시 제공될 보상 변수 mobEXP, mobGold 포함 (모두 int 형)
+ - 생성자 : 모든 변수의 내용을 인자로 받아서 채워넣음(ALT+SHIFT+S,O 단축키 활용)
+ - setEXP 메소드 : Level 기반으로 랜덤으로 경험치를 저장 (Level * 20 값을 기준으로 ±0~5 랜덤)
+ - setGold 메소드 : Level 기반으로 랜덤으로 골드(소지금액)를 저장 (Level * 100 값을 기준으로 +1~50 랜덤)
+※setEXP, setGold 메소드는 몬스터를 생성할때 실행되도록 함
+
+
+★맵 객체 Map 클래스 구현
+ - 맵 이름 변수 mapName 포함 (String 형)
+ - 캐릭터 체력을 저장할 변수 characterHP 포함 (int 형)
+ - 생성자 : mapName 변수는 인자로 받아서 채워넣음, 이외에는 0으로 초기화
+ - insertMap 메소드 : 맵에 진입했을 때 맵 이름을 출력
+ - Battle 메소드 : 몬스터 조우 및 전투 메소드.
+    └매 번 전투마다 체력은 초기화되며, 한 턴 안에 1회씩 공격을 주고받는다.
+    └어느 한 쪽 혹은 양쪽 모두 체력이 0이 될때까지 전투하며, 전투가 끝나면 결과에 따라 보상과 패널티가 주어진다.
+    └보상 : 몬스터가 보유한 경험치와 골드(소지금액) 을 캐릭터에게 지급(GetReward 메소드 실행)
+    └패널티 : 캐릭터가 현재 보유한 경험치의 10%를 소실(소수점버림)
+ - GetReward 메소드 : 전투 승리 시 보상 획득 메소드
+ - LoseEXP 메소드 : 전투 패배 시 패널티 메소드
+
+◆Map 클래스를 상속하는 맵 객체 Grassland, Dungeon 클래스 구현
+①Grassland 클래스
+ - Grassland 에 서식할 일반몬스터 3체 포함 (Monster[3] 형) : 일반몬스터 3체 중 1마리 랜덤 생성
+ - 랜덤생성 변수 create 포함 (int  형)
+ - 생성자 : 맵 이름을 전달인자로 받아서 저장, create 는 0으로 초기화, 일반몬스터 3체의 정보를 삽입
+ - RandomCreate 메소드 : 0~2 숫자 중 랜덤 1개 뽑아서 create 에 저장 후, create 값에 맞는 몬스터를 리턴(몬스터 생성)
+ - GrasslandRun 메소드 : 맵 진입 후 전투하는 부분까지 실행하는 메소드
+②Dungeon 클래스
+ - Dungeon 에 서식할 보스몬스터 1체 포함 (Monster 형)
+ - 생성자 : 맵 이름을 전달인자로 받아서 저장, 보스몬스터 1체의 정보를 삽입
+ - DungeonRun 메소드 : 맵 진입 후 전투하는 부분까지 실행하는 메소드
+
+
+★실행 관련 프로세스 객체 GameRun 클래스 구현
+ - 선택지 저장 변수 select 포함 (int 형)
+ - 캐릭터 정보 저장 변수 character 포함 (Character 형)
+ - 지급장비 정보 저장 변수 equipment 포함 (Equipment[] 형)
+ - 맵 정보 저장 변수 selectMap 포함 (Map 형)
+ - 생성자 : select 변수 0으로 초기화, 장비 4가지 정보를 입력
+ - Start 메소드 : 직업 선택을 Scanner로 받아서 select 변수에 저장
+ - setCharacter 메소드 : 저장된 select 변수의 값에 따라 character 의 직업 선택 및 닉네임 입력
+ - setEquipment 메소드 : 장비 선택을 Scanner로 받아서 select 변수에 저장, 이후 장비 착용
+ - selectMenu 메소드 : 캐릭터 및 장비셋팅이 끝난 후, select 변수에
+                                   파밍하기(Grassland)/던전가기(Dungeon)/캐릭정보 조회/게임종료 기능을 Scanner로 받아서 실행
+ - getCharInfo 메소드 : 캐릭터정보 출력 메소드
+ - Run 메소드 : 메인함수에서 직접 접근할 메소드. GameRun 클래스의 일련의 과정들을 실행한다.
+    └Start, setCharacter, setEquipment, selectMenu 메소드 실행
