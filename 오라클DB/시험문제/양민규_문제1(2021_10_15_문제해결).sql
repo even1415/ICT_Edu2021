@@ -1,0 +1,38 @@
+--1. 다음과 같이 DEPARTMENT, EMPLOYEE 테이블이 존재한다.
+--두 개의 테이블을 조인하여 EMPNO, EMPNAME, DEPTNO, DEPTNAME 컬럼을 조회하는 조인문을 작성하기 위해
+--아래와 같은 구문을 작성하였다. 이 때 발생하는 문제점을 [원인](10점)에 기술하고,
+--이를 해결하기 위한 오라클전용구문과 ANSI표준 구문을 [조치내용](30점)에 기술하시오. (40점). ( 40점 )
+
+CREATE TABLE DEPARTMENT (
+  DEPTNO NUMBER PRIMARY KEY,
+  DEPTNAME NVARCHAR2(10) NOT NULL
+);
+
+CREATE TABLE EMPLOYEE (
+  EMPNO NUMBER PRIMARY KEY,
+  EMPNAME NVARCHAR2(10) NOT NULL,
+  DEPTNO NUMBER REFERENCES DEPARTMENT(DEPTNO)
+);
+
+SELECT EMPNO, EMPNAME, DEPTNO, DEPTNAME
+FROM EMPLOYEE E, DEPARTMENT D
+WHERE E.DEPTNO = D.DEPTNO;
+
+---------------답안작성---------------
+-- 원인 :
+-- EMPLOYEE 테이블과 DEPARTMENT 테이블 모두 DEPTNO 컬럼이 존재하기 때문에
+-- SELECT DEPTNO 에서 DEPTNO 를 어느 테이블에 소속된 컬럼을 사용할 지 확정지을 수 없다.
+-- 따라서, 아래와 같이 DEPTNO 의 소속을 명시해주어야 한다.
+
+-- 해결 :
+--오라클 VER.
+SELECT EMPNO, EMPNAME, E.DEPTNO, DEPTNAME
+FROM EMPLOYEE E, DEPARTMENT D
+WHERE E.DEPTNO = D.DEPTNO;
+
+--ANSI VER.
+--ANSI 표준에서는 EMPLOYEE 테이블을 기준으로 DEPARTMENT 테이블이 합병되는 식이기 때문에
+--별도의 소속 명시 없이 DEPTNO 를 조회한다.
+SELECT EMPNO, EMPNAME, DEPTNO, DEPTNAME
+FROM EMPLOYEE
+LEFT JOIN DEPARTMENT USING (DEPTNO);

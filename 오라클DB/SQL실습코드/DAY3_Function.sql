@@ -1,0 +1,38 @@
+--소속부서가 '50'이거나 부서가 배정되지 않은 직원들의 급여 합계
+SELECT SUM(SALARY), SUM(DISTINCT SALARY)
+FROM EMPLOYEE
+WHERE DEPT_ID = '50' OR DEPT_ID IS NULL;
+
+--소속부서가 50 또는 90 또는 NULL인 직원들의 보너스 평균 조회
+SELECT AVG(BONUS_PCT) 기본평균,
+            AVG(DISTINCT BONUS_PCT) 중복제거평균,
+            AVG(NVL(BONUS_PCT, 0)) NULL포함평균
+FROM EMPLOYEE
+WHERE DEPT_ID IN('50', '90') OR DEPT_ID IS NULL;
+
+
+--부서코드가 50 또는 90인 직원들의 직급코드의
+--최대값,최소값,입사일의 최대값,최소값, 급여의 최대값,최소값
+SELECT MAX(JOB_ID), MIN(JOB_ID),
+            MAX(HIRE_DATE), MIN(HIRE_DATE),
+            MAX(SALARY), MIN(SALARY)
+FROM EMPLOYEE
+WHERE DEPT_ID IN('50', '90');
+
+--COUNT : 전체 행 갯수 반환
+--컬럼이 전체(*)가 아닌 경우 범위 내에서 NULL은 제외
+SELECT COUNT(*), COUNT(DEPT_ID), COUNT(DISTINCT DEPT_ID)
+FROM EMPLOYEE;
+--50번 부서에 소속되었거나 부서가 배정되지 않은 직원 수
+SELECT COUNT(*), --NULL 포함
+            COUNT(DEPT_ID) --NULL 제외
+FROM EMPLOYEE
+WHERE DEPT_ID = '50' OR DEPT_ID IS NULL;
+
+--서브쿼리 사용하기
+SELECT EMP_ID, EMP_NAME, SALARY
+FROM EMPLOYEE
+WHERE SALARY > (SELECT AVG(SALARY) FROM EMPLOYEE);
+
+SELECT EMAIL, INSTR(EMAIL, 'c', INSTR(EMAIL, '.')-1)
+FROM EMPLOYEE;
