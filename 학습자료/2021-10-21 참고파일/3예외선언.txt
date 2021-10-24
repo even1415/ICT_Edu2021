@@ -1,0 +1,24 @@
+class A{
+
+   void a() throws IOException
+   {
+	int n=System.in.read();
+   }	
+}/////////////////////////////
+
+class B{
+
+   void b() throws IOException
+   {
+	A x=new A();
+	x.a();
+   }
+}//////////////////////////////
+class C
+{
+   public static void main(String[] args) throws IOException
+  {
+	B y=new  B();
+	y.b();
+  }
+}

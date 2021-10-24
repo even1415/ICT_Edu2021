@@ -1,0 +1,40 @@
+public abstract  class A
+{
+	int a=1;
+	vod sub(){
+	}
+	abstract void foo();
+
+}
+추상클래스
+
+멤버변수
+멤버메소드
++ 추상메소드
+
+class Sub extends A
+{
+	void foo(){
+		...
+	}	
+}
+////////////////////////////////////////////
+public interface B
+{
+    int X=2; //public static final 상수
+    void bar(); //public abstract 자동으로 붙는다.
+    void baz(int x);
+
+}
+//인터페이스는 다중 상속이 가능하다.
+class Demo implements B, C, D
+{
+	public void bar(){
+
+	}
+	public void baz(int x){
+
+	}
+
+
+}

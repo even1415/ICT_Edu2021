@@ -1,0 +1,27 @@
+개념 정리 복습
+
+1. Animal 클래스 만들되 추상클래스로 만들고 아래의 추상메소드를 선언하세요.
+
+	(1) void crySound()
+        (2) void getBaby(int num)
+
+2. Animal을 상속받는 클래스 Dog, Cat, Duck클래스를 만들어서
+	추상메소드들을 오버라이드하기
+	(1) Dog 
+	- "멍멍~~"
+	- 3마리의 새끼를 낳았어요
+
+	(2) Cat
+	- "야옹 야옹~~"
+	- 3마리의 새끼를 낳았어요
+
+	(3) Duck
+	-"꽥꽥~~"
+	- 3개의 알을 낳았어요
+
+3. AnimalTest클래스에서 main()메소드 구성한 뒤에
+	Dog,Cat,Duck객체 생성후
+	crySound(), getBaby()메소드 호출하여 테스트 하기
+
+	
+	

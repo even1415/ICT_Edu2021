@@ -1,0 +1,32 @@
+ 콩씨 <============>	퐁씨
+			앱
+			
+
+class NotKongException extends Exception
+{
+	public NotKongException(){
+	   super("콩씨는 절대로 가입 불가!!!");
+		//예외 메시지로 등록된다.
+	}
+	public NotKongException(String msg){
+	   super(msg);
+	}
+}//////////////////////////////////////////////////////
+
+class PongApp
+{
+	"콩길동"
+	public void join(String name, String pwd)
+	throws NotKongException
+	{
+	   char ch=name.charAt(0);
+	   if(ch=='콩'){
+		//사용자 정의 예외를 발생시킬 때는 throw new 예외();
+		//throw와 throws는 set로 같이가자
+		throw new NotKongException();
+	   }
+
+	}
+
+
+}
