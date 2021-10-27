@@ -1,0 +1,79 @@
+/*
+CREATE OR REPLACE PROCEDURE 프로시저명
+IS
+변수 선언문
+BEGIN
+실행문
+END;
+*/
+------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE HELLO(NAME IN VARCHAR2)
+IS
+BEGIN
+DBMS_OUTPUT.PUT_LINE('Hello ' || NAME);
+END;
+/
+
+
+SET SERVEROUTPUT ON
+
+EXECUTE HELLO('SCOTT');
+EXECUTE HELLO('JAME');
+------------------------------------------------------------
+--현재,3시간 후 시각 출력 프로시저
+CREATE OR REPLACE PROCEDURE MYTIME
+IS
+CTIME TIMESTAMP;
+ATIME TIMESTAMP;
+BEGIN
+SELECT SYSTIMESTAMP, SYSTIMESTAMP +3/24 INTO CTIME, ATIME FROM DUAL;
+
+DBMS_OUTPUT.PUT_LINE('현재 시간 : '|| CTIME);
+DBMS_OUTPUT.PUT_LINE('3시간 후 : '|| ATIME);
+END;
+/
+
+EXEC MYTIME
+------------------------------------------------------------
+--MEMO테이블에 데이터 INSERT하는 프로시저 작성
+--작성자, 메모내용 => IN PARAMETER 해서 INSERT
+CREATE OR REPLACE PROCEDURE MEMO_ADD
+(PNAME IN MEMO.NAME%TYPE,
+  PMSG IN MEMO.MSG%TYPE)
+IS
+BEGIN
+INSERT INTO MEMO(IDX, NAME, MSG)
+VALUES(MEMO_SEQ.NEXTVAL, PNAME, PMSG);
+COMMIT;
+END;
+/
+
+EXEC MEMO_ADD('김명진','안녕?');
+
+SELECT * FROM MEMO ORDER BY IDX ASC;
+------------------------------------------------------------
+--삭제할 글번호를 IN 파라미터 받아서 해당 글을 MEMO에서 삭제
+CREATE OR REPLACE PROCEDURE MEMO_DELETE
+(DNUM IN MEMO.IDX%TYPE)
+IS
+BEGIN
+DELETE FROM MEMO WHERE (IDX = DNUM);
+COMMIT;
+END;
+
+EXEC MEMO_DELETE(7);
+------------------------------------------------------------
+--수정할 글번호,글내용 IN 파라미터 받아서
+--해당글 수정하는 프로시저(MEMO_UPDATE) 작성
+CREATE OR REPLACE PROCEDURE MEMO_UPDATE
+(DNUM IN MEMO.IDX%TYPE,
+  PMSG IN MEMO.MSG%TYPE)
+IS
+BEGIN
+UPDATE MEMO SET MSG = PMSG
+WHERE IDX = DNUM;
+COMMIT;
+END;
+/
+
+EXEC MEMO_UPDATE(5, '롤백 후 수정');
