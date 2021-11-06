@@ -1,0 +1,59 @@
+package com.ict.jdbc_hr;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
+public class MyDemo extends JFrame {
+   JPanel p;
+   SubPanel s1=new SubPanel();
+   SubPanel s2=new SubPanel();
+   SubPanel s3=new SubPanel();
+   SubPanel s4=new SubPanel();
+   SubPanel s5=new SubPanel();
+   SubPanel s6=new SubPanel();
+   public MyDemo() {
+      super("::MyDemo::");
+      Container cp = this.getContentPane();
+      p = new JPanel();
+      p.setBackground(Color.white);
+      cp.add(new JScrollPane(p), BorderLayout.CENTER);
+      GridBagLayout gbl=new GridBagLayout();
+      p.setLayout(gbl);
+      
+      
+      GridBagConstraints  gbc  =  new  GridBagConstraints();
+      gbc.fill=GridBagConstraints.BOTH;
+      gbc.gridy=1;
+      gbc.gridx=GridBagConstraints.RELATIVE;
+      p.add(s1, gbc);
+      
+      gbc.gridy=2;
+      p.add(s2, gbc);
+      
+      gbc.gridy=3;
+      p.add(s3, gbc);
+      
+      gbc.gridy=4;
+      p.add(s4, gbc);
+      gbc.gridy=5;
+      p.add(s5, gbc);
+      gbc.gridy=6;
+      p.add(s6, gbc);
+      
+      this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+   }//생성자----------------
+
+   public static void main(String[] args) {
+      MyDemo my = new MyDemo();
+      my.setSize(500, 700);
+      my.setVisible(true);
+   }//main()
+
+}//class

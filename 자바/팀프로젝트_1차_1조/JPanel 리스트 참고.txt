@@ -1,0 +1,6 @@
+참고
+
+https://stackoverflow.com/questions/20487329/whats-the-best-way-to-organize-jpanels-in-a-list
+
+
+https://stackoverflow.com/questions/7107939/add-jpanel-to-jlist
