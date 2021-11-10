@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05목록태그.html</title>
+</head>
+<body>
+    <h1>목록 태그</h1>
+    <h2>순서있는 목록 태그 : ol태그 (ordered list)</h2>
+    <!-- block요소
+         ol
+          - 속성
+                [1] type : 1 (default), A, a, I, i
+                [2] start : 시작값을 지정 (숫자로 지정)
+            -->
+    <ol type = "I" start = "3">
+        <li>Java</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+    <hr color = "red">
+    
+    <h2>순서없는 목록 태그 : ul태그 (unordered list)</h2>
+    <!-- type : disc (default), circle, square-->
+    <ul type = "square">
+        <li>Java</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <hr color = "blue">
+    <h2>Dl > DT, DD태그</h2>
+
+    <p>
+        DL태그는 용어를 정의하는 영역을 정할 때 사용한다.
+        dl(definition list) > dt(definirion term + dd(definition description)
+        <br>
+        용어 제목은 DT로, 용어에 대한 설명은 DD태그를 사용한다.
+        <dl>
+            <dt>HTML</dt>
+            <dd>Hyper Text Markup Language</dd>
+
+            <dt>JSP</dt>
+            <dd>Java Server Page</dd>
+        </dl>
+    </p>
+
+</body>
+</html>
