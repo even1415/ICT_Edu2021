@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* position: static(디폴트) 차례대로 왼쪽에서 오른쪽, 위에서 아래로 */
+        span, div{
+            background-color: coral;
+            border: 1px solid red;
+        }
+        /* 각각의 태그가 기존 static이었을 때의 위치를 기준으로 
+        top, right, bottom, left 방향으로 주어진 픽셀만큼 이동함. */
+        .top{
+            position: relative; /*상대위치*/
+            top: 15px;
+        }
+        .right{
+            position: relative;
+            background-color: cornflowerblue;
+            right: 30px;
+        }
+        .bottom{
+            position: relative;
+            background-color: lightgreen;
+            bottom:-10px;
+        }
+        .left{
+            position: relative;
+            background-color: yellow;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <span class="top">span1</span>
+    <span class="right">span2</span>
+    <span class="bottom">span3</span>
+    <div class="left">div1</div>
+    <h1>position - static, absolute, [relative], fixed</h1>
+</body>
+</html>
+<!-- ex36포지션.html -->

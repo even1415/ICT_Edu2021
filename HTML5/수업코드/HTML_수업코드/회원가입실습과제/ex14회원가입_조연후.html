@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        span{
+            font-size:11px;
+        }
+    </style>
+</head>
+<body>
+    <form name="joinF" action="join.jsp" method="get">
+    <table  width="600" cellspacing="0">
+        <tr><td bgcolor="pink" colspan="2">아이디(ID)정보</td></tr>
+        <tr>
+            <td bgcolor="yellow">*아이디</td>
+            <td> <input type="text" name="userid"> <button type="button" name="중복검사">중복검사</button>
+        <br> <span style="color:blue">(4~12자 영어/숫자 가능,한글,특수문자 ID는 사용할 수 없습니다.)</span> </td>
+        </tr>
+         <tr>
+            <td bgcolor="yellow">*비밀번호</td> 
+            <td><input type="text" name="userpwd">
+             <span style="color:blue">(4~8자 이내로 만들어 주세요)</span> </td>
+        </tr>
+        <tr>
+            <td bgcolor="yellow">*비밀번호 확인</td>
+            <td><input type="text" name="userpwd2">
+                <span style="color:blue">(위 번호와 같게 입력해주세요.))</span>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="yellow">*본인확인 질문</td>
+            <td><select name="lang" id="lang">
+                <option>질문을 선택하세요.</option>
+                <option>우리집 고양이 이름?</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td bgcolor="yellow">*본인확인 답</td>
+            <td><input type="text">
+                <span style="color:blue">(비밀번호 분실, 변경시 본인확인을 위한 정보)</span>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="pink" colspan="2">*개인정보</td>
+        </tr>
+        <tr>
+            <td bgcolor="yellow">*이름(한글)</td>
+            <td><input type="text"><span style="color: blue;">(예: 박정현)</span>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="yellow">*성별</td>
+            <td><label><input type = "radio" name = "gender" value="Male" checked>남자</label>
+                <label><input type = "radio" name = "gender" value="Female">여자</label> </td>
+        </tr>
+        <tr>
+           <td bgcolor="yellow">*생년월일</td> 
+           <td><input type="text"><span style="color: black;">년</span>
+            <select name="lang" id="lang" >
+                <option value="">선택</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select><span style="color: black;">월</span>
+            <select name="lang" id="lang" >
+                <option value="">선택</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="12">13</option>
+                <option value="12">14</option>
+                <option value="12">15</option>
+                <option value="12">16</option>
+                <option value="12">17</option>
+                <option value="12">18</option>
+                <option value="12">19</option>
+                <option value="12">20</option>
+                <option value="12">21</option>
+                <option value="12">22</option>
+                <option value="12">23</option>
+                <option value="12">24</option>
+                <option value="12">25</option>
+                <option value="12">26</option>
+                <option value="12">27</option>
+                <option value="12">28</option>
+                <option value="12">29</option>
+                <option value="12">30</option>
+                <option value="12">31</option>
+            </select> <span style="color: black;">일</span> 
+            <label><input type = "radio" name = "gender" value="Male">음력</label>
+            <label><input type = "radio" name = "gender" value="Female">양력</label>
+
+        </td>
+        </tr>
+        <tr>
+           <td bgcolor="yellow"> *주소</td>
+           <td><input type="text"><button>우편번호 찾기</button> <br>
+            <input type="text" style="width:300px;">
+        
+        
+        </td>
+        </tr>
+        <tr>
+           <td bgcolor="yellow">*전화번호</td> 
+           <td><span style="color: red;">핸드폰</span>
+            <input type="text" style="width:50px;"><span>-</span>
+            <input type="text" style="width:50px;"><span>-</span>
+            <input type="text" style="width:50px;">
+            <label><input type = "radio" name = "gender" value="Male">SKT</label>
+            <label><input type = "radio" name = "gender" value="Female">KTF</label>
+            <label><input type = "radio" name = "gender" value="Female">LGT</label> <br>
+            <span style="color: red;">집/회사</span>
+                <input type="text" style="width:50px;"><span>-</span>
+                <input type="text" style="width:50px;"><span>-</span>
+                <input type="text" style="width:50px;">
+                <span style="color: blue;">최소 한 개는 입력하세요.</span>
+        </td>
+        </tr>
+        <tr>
+           <td bgcolor="yellow">*직업</td> 
+          <td> <select>
+               <option>직업을 선택하세요</option>
+               <option>농부</option>
+               <option>낚시꾼</option>
+               <option>권투선수</option>
+               <option>의사</option>
+           </select></td>
+         
+        </tr>
+        <tr>
+            <td bgcolor="yellow">이메일</td>
+            <td><input type="text"></td>
+            
+        </tr>
+        <tr>
+           <td bgcolor="yellow"> 메일수신</td>
+           <td> <label><input type = "radio" name = "gender" value="Male">받습니다.</label>
+            <label><input type = "radio" name = "gender" value="Female">받지 않습니다.</label></td>
+        </tr>
+        <tr>
+            <td bgcolor="yellow">SMS수신</td>
+            <td> <label><input type = "radio" name = "gender1" value="Male">받습니다.</label>
+                <label><input type = "radio" name = "gender1" value="Female">받지 않습니다.</label></td>
+        </tr>
+        <tr>
+            <TD bgcolor="yellow">가입인사</TD>
+            <td>
+                <textarea name ="intro" rows="7" cols="50"></textarea><br>
+            </td>
+        </tr>
+    </table>
+    <button type="submit">확인</button>
+    <button type="reset">다시입력
+    </button>
+</form>
+</body>
+</html>

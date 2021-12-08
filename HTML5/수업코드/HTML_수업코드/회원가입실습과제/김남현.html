@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+
+<body>
+    <formname="joinF" action="join.jsp" method="post" enctype="application/x-www-form-urlencoded">
+        <table width="800px" height="700" style="font-size:13px;">
+            <tr>
+                <td colspan="2" bgcolor="#F8FBEF"><b>☞아이디(ID)정보</b></td>
+
+            </tr>
+            <tr>
+                <td align="right" bgcolor="#EFF5FB">* 아이디</td>
+
+                <td><input type="text" name="userid">
+                    <input type="button" value="중복검사" onclick="alert('사용하실 수 없습니다')">
+                    <br>
+                    <span style="color:blue"><small>
+                            (4~12자 영자/숫자 가능, 한글, 특수문자 ID는 사용할 수 없습니다.)</small></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td align="right" bgcolor="#EFF5FB">* 비밀번호</td>
+                <td><input type="password" name="password">
+                    <span style="color : blue"><small>(4~8자 이내로 만들어 주세요)</small></span>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="#EFF5FB">* 비밀번호 확인</td>
+                <td><input type="passwordr" name="password">
+                    <span style="color:blue"><small> (위 번호와 같이 입력해 주세요)</small></span>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="#EFF5FB">* 본인확인 질문</td>
+                <td>
+                    <select name="question">
+                        <option>질문을 선택하세요</option>
+                        <option value="question1"> 가장 좋아하는 것은? </option>
+                        <option value="question2"> 나는 어떤 사람인가? </option>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="#EFF5FB">* 본인확인 답</td>
+                <td><input type="text" name="answer">
+                    <span style=color:blue><small>
+                            (비밀번호 분실, 변경시 본인확인을 위한 정보)</small></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" bgcolor="#F8FBEF"><b>☞개인정보</b></td>
+
+            </tr>
+            <tr>
+                <td align="right" bgcolor="#EFF5FB">* 이름(한글)</td>
+                <td><input type="text" name="name">
+                    <span style=color:blue><small> (예:박정현)</small></span>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="#EFF5FB"> 성별</td>
+                <td>
+                    <input type="radio" name="gender" value="기타">기타
+                    <input type="radio" name="gender" value="여">여
+                    <input type="radio" name="gender" value="남">남
+                </td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="#EFF5FB"> 생년월일</td>
+                <td>
+                    <input type="text" name="year">년
+                    <select name="month">
+                        <option>선택</option>
+                        <option value="1"> 1월 </option>
+                        <option value="2"> 2월 </option>
+                        <option value="3"> 3월 </option>
+                        <option value="4"> 4월 </option>
+                        <option value="5"> 5월 </option>
+                        <option value="6"> 6월 </option>
+                        <option value="7"> 7월 </option>
+                        <option value="8"> 8월 </option>
+                        <option value="9"> 9월 </option>
+                        <option value="10"> 10월 </option>
+                        <option value="11"> 11월 </option>
+                        <option value="12"> 12월 </option>
+                    </select>
+                    월
+                    <select name="day">
+                        <option>선택</option>
+                        <option value="d1"> 1일 </option>
+                        <option value="d2"> 2일 </option>
+                        <option value="d3"> 3일 </option>
+                        <option value="d4"> 4일 </option>
+                        <option value="d5"> 5일 </option>
+                        <option value="d6"> 6일 </option>
+                        <option value="d7"> 7일 </option>
+                        <option value="d8"> 8일 </option>
+                        <option value="d9"> 9일 </option>
+                        <option value="d10"> 10일 </option>
+                        <option value="d11"> 11일 </option>
+                        <option value="d12"> 12일 </option>
+                        <option value="d13"> 13일 </option>
+                        <option value="d14"> 14일 </option>
+                        <option value="d15"> 15일 </option>
+                        <option value="d16"> 16일 </option>
+                        <option value="d17"> 17일 </option>
+                        <option value="d18"> 18일 </option>
+                        <option value="d19"> 19일 </option>
+                        <option value="d20"> 20일 </option>
+                        <option value="d21"> 21일 </option>
+                        <option value="d22"> 22일 </option>
+                        <option value="d23"> 23일 </option>
+                        <option value="d24"> 24일 </option>
+                        <option value="d25"> 25일 </option>
+                        <option value="d26"> 26일 </option>
+                        <option value="d27"> 27일 </option>
+                        <option value="d28"> 28일 </option>
+                        <option value="d29"> 29일 </option>
+                        <option value="d30"> 30일 </option>
+                        <option value="d31"> 31일 </option>
+                    </select>일
+                    <input type="radio" name="montht" value="solar">음력
+                    <input type="radio" name="montht" value="lunar">양력
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" align="right" bgcolor="#EFF5FB">* 주소</td>
+                <td rowspan="2"><input type="text" name="address">
+                    <input type="button" value="우편번호 찾기"><br>
+                    <input type="text" name="address2" style="width:400px">
+                </td>
+            </tr>
+            <tr>
+
+            </tr>
+            <tr>
+                <td rowspan="2" align="right" bgcolor="#EFF5FB">* 전화번호</td>
+                <td rowspan="2"><span style=color:brown><small> 핸드폰</small></span>
+                    <input type="text" name="phone1" style="width:50px">-
+                    <input type="text" name="phone2" style="width:50px">-
+                    <input type="text" name="phone3" style="width:50px">
+                    <input type="radio" name="com" value="skt">SKT
+                    <input type="radio" name="com" value="kt">KTF
+                    <input type="radio" name="com" value="lg">LGT
+                    <input type="radio" name="com" value="cect">etc<br>
+                    <span style=color:brown><small> 집/회사</small></span>
+                    <input type="text" name="tel1" style="width:50px">-
+                    <input type="text" name="tel2" style="width:50px">-
+                    <input type="text" name="tel3" style="width:50px">
+                    <span style=color:blue><small> 최소 한 개는 입력하세요.</small></span>
+                </td>
+            </tr>
+            <tr>
+
+            </tr>
+            <tr>
+                <td align="right" bgcolor="#EFF5FB">* 직업</td>
+                <td>
+                    <select name="job">
+                        <option>직업을 선택하세요</option>
+                        <option value="developer">개발자</obtion>
+                        <option value="etc">기타</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="#EFF5FB">이메일</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="#EFF5FB">메일수신</td>
+                <td>
+                    <input type="radio" name="mail" value="ok" checked>받습니다
+                    <input type="radio" name="mail" value="nk">받지 않습니다
+                    <span style=color:blue><small>
+                            다양하고 유익한 정보, 메일로 받아보세요.</small></span>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="#EFF5FB">SMS수신</td>
+                <td><input type="radio" name="sms" value="sok">받습니다
+                    <input type="radio" name="sms" value="nok">받지 않습니다
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" align="right" bgcolor="#EFF5FB">가입인사</td>
+                <td rowspan="2"> <input type="text" name="hello" style="width:400px; padding:15px"></td>
+            </tr>
+        </table>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button>확인</button><button type="reset"> 다시입력 </button>
+
+
+
+        </form>
+</body>
+
+</html>

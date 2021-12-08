@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <form>
+        <table align="center">
+            <tr style="background-color: salmon;">
+                <td colspan="2">☞아이디(ID)정보</td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue; width: 150px;" align="right">* 아이디</td>
+                <td>
+                    <input type="text" name="idBox">
+                    <button>중복검사</button> <br>
+                    <span style="color:royalblue;">(4~2자 영자/숫자 가능, 한글, 특수문자 ID는 사용할 수 없습니다.)</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">* 비밀번호</td>
+                <td>
+                    <input type="pwd" name="pwdBox">
+                    <span style="color:royalblue;">(4~8자 이내로 만들어 주세요)</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">* 비밀번호 확인</td>
+                <td>
+                    <input type="text" name="confirmPwd">
+                    <span style="color:royalblue;">(위 번호와 같이 입력해 주세요)</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">* 본인확인 질문</td>
+                <td>
+                    <select name="identify">
+                        <option value="">질문을 선택하세요</option>
+                        <option value="본인의 출생지는?">본인의 출생지는?</option>
+                        <option value="본인의 첫 해외여행지는?">본인의 첫 해외여행지는?</option>
+                        <option value="본인의 첫 반려동물의 이름은?">본인의 첫 반려동물의 이름은?</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">* 본인확인 답</td>
+                <td>
+                    <input type="text" name="identifyConf" id="">
+                    <span style="color: royalblue;">(비밀번호 분실, 변경시 본인확인을 위한 정보)</span>
+                </td>
+            </tr>
+            <tr style="background-color: salmon;">
+                <td colspan="2">☞개인정보</td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">* 이름(한글)</td>
+                <td>
+                    <input type="text" name="name">
+                    <span style="color: royalblue;">(예:박정현)</span>
+                </td> 
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">성별</td>
+                <td>
+                    <label>
+                        <input type="radio" name="gender" value="Male" checked>남
+                    </label>        
+                    <label>
+                        <input type="radio" name="gender" value="Female">여
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">생년월일</td>
+                <td>
+                    <input type="text" name="year">년 
+                    <select name="month">
+                        <option value="선택">선택</option>
+                        <option value="3">3</option>
+                        <option value="6">6</option>
+                        <option value="9">9</option>
+                    </select>월
+                    <select name="day">
+                        <option value="선택">선택</option>
+                        <option value="3">3</option>
+                        <option value="6">6</option>
+                        <option value="9">9</option>
+                    </select>일&nbsp;
+                    <label>
+                        <input type="radio" name="birth" value="Solar" checked>양력
+                    </label>        
+                    <label>
+                        <input type="radio" name="birth" value="Lunar">음력
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">* 주소</td>
+                <td>
+                    <input type="text" name="addr1">
+                    <button>우편번호 찾기</button><br>
+                    <input type="text" name="addr2">
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">* 전화번호</td>
+                <td>
+                    <span style="color: slateblue;">핸드폰</span>
+                    <input type="text" name="cp1" style="width:50px;"> - 
+                    <input type="text" name="cp2" style="width:50px;"> - 
+                    <input type="text" name="cp3" style="width:50px;">
+                    <label>
+                        <input type="radio" name="telecom" value="SKT" checked>SKT
+                    </label>        
+                    <label>
+                        <input type="radio" name="telecom" value="KT">KT
+                    </label>
+                    <label>
+                        <input type="radio" name="telecom" value="LGT">LGT
+                    </label><br>
+                    <span style="color: slateblue;">집/회사</span>
+                    <input type="text" name="ph1" style="width:50px;"> - 
+                    <input type="text" name="ph2" style="width:50px;"> - 
+                    <input type="text" name="ph3" style="width:50px;">
+                    <span style="color: royalblue;">최소 한개는 입력하세요.</span> 
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">* 직업</td>
+                <td>
+                    <select name="job">
+                        <option value="직업을 선택하세요.">직업을 선택하세요.</option>
+                        <option value="housewife">주부</option>
+                        <option value="student">대학생</option>
+                        <option value="salaryman">회사원</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">이메일</td>
+                <td>
+                    <input type="text" name="email">
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">메일수신</td>
+                <td>
+                    <label>
+                        <input type="radio" name="getmail" value="ymail" checked>받습니다.
+                        <input type="radio" name="getmail" value="nmail">받지 않습니다.
+                    </label>
+                    <span style="color: royalblue;">다양하고 유익한 정보, 메일로 받아보세요.</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">SMS수신</td>
+                <td>
+                    <label>
+                        <input type="radio" name="getSMS" value="ySMS" checked>받습니다.
+                        <input type="radio" name="getSMS" value="nSMS">받지 않습니다.
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: skyblue;" align="right">가입인사</td>
+                <td>
+                    <textarea name="greetings" cols="40" rows="5"></textarea>
+                </td>
+            </tr>
+            <tr align="center">
+                <td colspan="2">
+                    <input type="submit" value="확인">
+                     <input type="reset" value="다시입력">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

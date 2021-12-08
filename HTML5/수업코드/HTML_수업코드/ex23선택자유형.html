@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex23선택자유형.html</title>
+    <style type="text/css">
+        /*1. 태그 선택 */
+        div{
+            color:green;
+            font-family: sans-serif;
+            font-size:22pt;
+            margin: 20px;
+        }
+        /*2. 클래스 선택자: 앞에 마침표(.)를 붙인다
+          .클래스명 {속성명:값,...}
+          클래스가 c1인 요소를 선택해서
+          글자색:purple
+          안쪽여백: 20px
+          바깥여백: 10px;
+          배경색: 알아서
+        */
+        .c1{
+            color:purple;
+            padding:20px;
+            margin: 10px;
+            background-color: rosybrown;
+        }
+        .c2{
+            border: thick green dashed;
+        }
+        /*3. 아이디 선택자: 앞에 #을 붙인다
+            => #아이디명{....}
+            id가 dv1선택해서
+            배경색: yellow
+            글자색: red
+            글자크기:1.2em;
+        */
+        #dv1{
+            background: yellow;
+            color:red;
+            font-size:1.2em;
+        }
+        /*우선순위
+        아이디선택자 > 클래스 선택자 > 태그 선택자
+        */
+        a{
+            font-style: italic;
+            text-decoration: none;
+        }
+        /*div안에 있는 a태그에 대해 배경색을 navy, 글자색 white로 주세요*/
+        div a{
+            background-color: navy;   
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <h1>아이디 선택자(selector), 클래스 선택자, 태그 선택자</h1>
+  <!-- 
+  id (identity) : 한 페이지 내에서 unique한 값을 가져야 한다. 식별자 역할을 하므로
+  class : 한 페이지 내에 동일한 이름의 클래스가 여러 개 나와도 된다
+  -->
+  <div id="dv1">div태그1</div>
+  <div class="c1">div태그2</div>
+  <div id="dv2">div태그3</div>
+  <div class="c1 c2">div태그4</div>
+  <div class="c2" id="dv3">div태그5</div>
+  <hr color='red'>
+  이것은 <a href="http://www.google.com">단순 링크</a>입니다.<p></p>
+  <div>
+  	div태그 안에서<h2><a href="ex22인라인방식.html">CSS3.0예제</a></h2>에 링크를 겁니다.
+  </div>
+</body>
+</html>
+<!-- ex23선택자유형.html -->

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ex03하이퍼링크.html</title>
+    </head>
+    <body>
+        <h1>텍스트에 하이퍼링크를 걸어봅시다</h1>
+        <a href="http://www.naver.com">네이버</a>|
+        <a href="http://www.google.com" target="_blank">구글</a>|
+        <a href="http://www.daum.net" title="하이퍼링크에 대한 설명">다음</a>
+        <hr color="green">
+        <h2>문서내 이동</h2>
+        <a href="ex01.html">내가 만든 문서1</a> |
+        <a href="ex02.html" target="_blank">내가 만든 문서2</a> |
+        <a href="images/car1.JPG">내가 만든 문서3</a> |
+        <a href="./images/car2.JPG">내가 만든 문서4</a> |
+        <!-- . : 현재 경로를 기준으로 찾으라는 의미
+            .. : 현재 보다 한단계 상위 경로를 의미
+            ../../: 현재 보다 2단계 상위 경로를 의미
+        -->
+        <!--  링크 클릭하면 브라우저에 이미지가 나타나도록 해보기
+            C:/HTML
+                +--images/car1.JPG
+                ex03.html
+        -->
+        <hr>
+        <!-- 상위 디렉토리에 있는 b.png파일을 보여주도록 링크걸기 -->
+        <a href="../b.png">이미지1</a>
+        <a href="../devtools/e.PNG">이미지2</a>
+        <!-- 상위dir /devtools/e.PNG 링크 걸기 -->
+        <a href="C:\devtools\b.png">절대경로</a>
+        <!-- 
+            상대경로: 현재 작성한 파일이 있는 곳을 기준으로 접근하는 방식
+            절대경로: 파일의 절대위치를 기준으로 접근하는 방식
+         -->
+    </body>
+</html>
+
+

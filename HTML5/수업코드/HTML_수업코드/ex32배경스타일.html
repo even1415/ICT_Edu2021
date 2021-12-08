@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            color:rgba(50%, 20%, 70%, 0.9)
+                /* rgb(red, green, blue)
+                   rgba=> a(투명도) : 0~1사이의 실수값
+                        0: 투명 1:불투명
+                */
+        }
+        /* span 태그: 글자크기 2배, 안쪽 여백 5px 바깥여백 30px */
+        span{
+            font-size: 2em;  
+            padding:5px;    
+            margin: 30px;
+        }
+        /* class sky배경색 => skyblue, pink=>hotpink */
+        span.sky{
+            background-color: skyblue;
+        }
+        .pink{
+            background-color: hotpink;
+        }
+        /* td태그에 대하 배경색 주기: 노랑 */
+        table>tbody>tr>td
+        {
+            /* background-color: yellow; */
+            background-image:url(images/blue.png);
+            background-repeat: repeat;
+        }
+        /* background-repeat: repeat(디폴트)
+            no-repeat, repeat-x, repeat-y
+          */
+          /* id가 x : x축으로 이미지 반복 */
+        td#x{
+            background-repeat: repeat-x;
+        }  
+        td#y{
+            background-repeat: repeat-y;
+        } 
+        td#z{
+            background-repeat: no-repeat;
+        }
+        td.a, #x2, #y2, #z2{
+            background-repeat: no-repeat;
+        }
+        td#x2{
+            background-position: right bottom;
+        }
+        td#y2{
+            background-position: 50% 50%;
+        }
+        td#z2{
+            background-position: 50px 50px;
+        }
+        /* textarea에 대해 아래 스타일을 적용하세요
+            글자크기: 1.2em;
+            배경이미지: 알아서
+            배경이미지: 반복하지 않도록
+            이미지를 중앙에 위치시키세요
+            테두리: 2px solid 색상알아서
+        */
+        textarea.txt{
+            font-size:1.2em;
+            background-image:url(images/icon1.png);
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            border: 2px solid darkcyan;
+            background-attachment: scroll;
+            /* scroll(default): 내용을 스크롤하면 배경이미지는
+                    스크롤되지 않는다.
+               local : 스크롤하면 배경이미지 움직임     
+             */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>배경 관련 스타일</h1>
+  <span class="sky">배경색 적용하기1</span>
+  <span class="pink">배경색 적용하기2</span>
+
+  <h2 class="sky">배경에 이미지 적용하기</h2>
+
+  <table border="1" height="400px" width="100%">
+  <tr>
+	<td width="25%">repeat</td>
+	<td width="25%" id="x">repeat-x</td>
+	<td width="25%" id="y">repeat-y</td>
+	<td width="25%" id="z">no-repeat</td>
+  </tr>
+  <tr>
+	<td width="25%" class="a">기본 위치는 left, top</td>
+	<td width="25%" id="x2">right-bottom</td>
+	<td width="25%" id="y2">50% 50%</td>
+	<td width="25%" id="z2">50px 50px</td>
+  </tr>
+  </table>
+<hr color="red">
+	<textarea class="txt" rows="10" cols="50">안녕하세요?</textarea>
+    <br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

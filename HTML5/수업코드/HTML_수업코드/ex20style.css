@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* ex20style.css */
+body{
+    font-size: 15px;
+    padding:30px;
+    color:brown;
+}
+/* div
+서체: 궁서체
+글자크기: 2em;
+바깥여백:20px;
+글자색:aqua;
+*/
+div{
+    font-family: 궁서체, 굴림체, sans-serif;
+    font-size: 5em; /*기본서체의 2배 크기*/
+    margin: 20px;
+    color:aqua;
+}

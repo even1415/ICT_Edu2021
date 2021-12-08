@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul>li:first-child{
+            color:brown;
+        }
+        ul> li:nth-last-child(2n+1){
+            color:blue;
+        }
+        ul> li:nth-last-child(2){
+            background-color: chartreuse;
+        }
+        p:first-of-type{
+            color:red;
+            
+        }
+        p:last-of-type{
+            color:green;
+        }
+        /* p태그 중 2번째 요소를 선택해서 글자색을 blue로 주세요 */
+        p:nth-of-type(2){
+            color:blue;
+        }
+        /* p태그 중 아래에서 2번째 요소를 선택해서 글자색을  orange주세요 */
+        p:nth-last-of-type(2){
+            color:orange;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Espresso</li>
+        <li>Americano</li>
+        <li>CaffeLatte</li>
+        <li>Cappuccino</li>
+        <li>CafeMocha</li>
+        <li>Carame Latte</li>
+    </ul>    
+    <hr>
+    <h1>This is a heading</h1>
+    <p>The first paragraph.</p>
+    <p>The second paragraph.</p>
+    <p>The third paragraph.</p>
+    <p>The fourth paragraph.</p>
+  <div>
+    <h1>This is a heading</h1>
+    <p>The first paragraph.</p>
+    <p>The second paragraph.</p>
+    <p>The third paragraph.</p>
+    <p>The fourth paragraph.</p>
+
+        
+   
+</body>
+</html>

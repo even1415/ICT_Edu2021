@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex35레이어.html</title>
+    <style>
+        body{
+            padding: 20px;
+        }
+        div{
+            /* background-color: yellow; */
+        }
+        /*  아이디가 wrap이 아닌 div들만
+            width:100px, height:100px로 주세요
+        */
+        div:not(#wrap){
+            width: 100px;
+            height: 100px;
+            /* background-color: violet; */
+        }
+        .z-1{
+            background: violet;
+            position: absolute; 
+            /*상위 부모요소를 기준으로 좌표를 잡는다*/
+            left:50px; /* x좌표*/
+            top:50px; /* y좌표*/
+            z-index:999;
+        }
+        .z-2{
+            background:lightblue;
+            position: absolute; 
+            /*상위 부모요소를 기준으로 좌표를 잡는다*/
+            left:80px;
+            top:80px;
+            z-index:8;
+        }
+        .z-3{
+            background: chocolate;
+            position: absolute; 
+            /*상위 부모요소를 기준으로 좌표를 잡는다*/
+            left:110px;
+            top:110px;
+            z-index:7;
+        }
+        .z-4{
+            background: rgb(112, 65, 197);
+            position: absolute; 
+            /*상위 부모요소를 기준으로 좌표를 잡는다*/
+            left:140px;
+            top:140px;
+        }
+    </style>
+</head>
+<body>
+    <h1>레이어 구성</h1>
+    <div id="wrap">
+        <div class="z-1">레이어: z-1</div>
+        <div class="z-2">레이어: z-2</div>
+        <div class="z-3">레이어: z-3</div>
+        <div class="z-4">레이어: z-4</div>
+    </div>
+</body>
+</html>
+<!-- ex35레이어.html -->

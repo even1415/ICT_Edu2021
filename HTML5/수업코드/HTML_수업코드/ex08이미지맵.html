@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ex08이미지맵.html</title>
+    </head>
+    <body>
+        <h1>이미지 맵</h1>
+        <p>이미지맵은 이미지의 좌표점에 따라 위치를 지정하여 링크 거는 형식을 사용</p>
+        <hr color='red'>
+        <img src="images/menu.PNG"  usemap="#mymap">
+        <!-- area
+                -속성
+                [1] shape: 링크되는 모양을 지정 rect, circle, poly
+                [2] coords: 좌표
+                       시작x, 시작y, 끝x, 끝y (사각형)
+					   중심점의 x, y좌표, r(반지름) <=(원)
+					   x1,y1, x2,y2, x3,y3 ... (다각형)
+         -->
+
+        <map name="mymap">
+            <area shape="rect" coords="24,3,85,42" href="http://www.naver.com">
+            <area shape="circle" coords="115,25,15" href="http://www.daum.net">
+            <area shape="poly" coords="162, 1,139,42, 185, 42" href="http://www.google.com">
+        </map>
+    </body>
+</html>

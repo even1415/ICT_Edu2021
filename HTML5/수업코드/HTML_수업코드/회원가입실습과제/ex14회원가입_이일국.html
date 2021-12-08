@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex14회원가입.html</title>
+</head>
+<body>
+    <form>
+        <table border="1" width="800" cellspace="0" bordercolor="white">
+            <tr>
+                <td colspan="2" bgcolor="#11bbcc"><b>☞ 아이디(ID)정보</b></td>
+                <!-- <td></td> -->
+            </tr>
+            <tr>
+                <td align="right" width="200" bgcolor="yellow">* 아이디</td>
+                <td><input type="text">&nbsp;<button type="submit">중복검사</button>
+                <br><span style="font-size:small; color:blue;">(4~12자 영어/숫자 가능. 한글, 특수문자 ID는 사용할 수 없습니다.)</span></td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="yellow">* 비밀번호</td>
+                <td><input type="password">&nbsp;<span style="font-size:small; color:blue;">(4~8자 이내로 만들어주세요)</span></td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="yellow">* 비밀번호확인</td>
+                <td><input type="password">&nbsp;<span style="font-size:small; color:blue;">(위 번호와 같이 입력해주세요)</td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="yellow">* 본인확인 질문</td>
+                <td><select name="question">
+                    <option value="">질문을 선택하세요</option>
+                    <option value="1">당신의 좌우명은?</option>
+                    <option value="2">당신이 좋아하는 색상은?</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="yellow">* 본인확인 응답</td>
+                <td><input type="text">&nbsp;<span style="font-size:small; color:blue;">(비밀번호 분실, 변경시 본인확인을 위한 정보)</span></td>
+            </tr>
+            <tr>
+                <td colspan="2" bgcolor="#11bbcc"><b>☞ 개인정보</b></td>
+                <!-- <td></td> -->
+            </tr>
+            <tr>
+                <td align="right" bgcolor="yellow">* 이름(한글)</td>
+                <td><input type="text">&nbsp;<span>(예:박정현)</span></td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="yellow">* 성별</td>
+                <td><input type="radio" name="gender" value="man" checked>남
+                <input type="radio" name="gender" value="woman">여</td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="yellow">* 생년월일</td>
+                <td><input type="text">년&nbsp;<select name="mon">
+                    <option value="">선택</option>
+                    <option value="jan">1</option>
+                    <option value="feb">2</option>
+                    <option value="mar">3</option>
+                </select>월&nbsp;
+                <select name="day">
+                    <option value="">선택</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>일&nbsp;<input type="radio" name="cal">음력&nbsp;<input type="radio" name="cal">양력</td>
+            </tr>
+            <tr>
+                <td align="right" rowspan="2" bgcolor="yellow">* 주소</td>
+                <td><input type="text" style="width:60%;">&nbsp;<button type="submit">우편번호찾기</button></td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td><input type="text" style="width:80%;"></td>
+            </tr>
+            <tr>
+                <td align="right" rowspan="2" bgcolor="yellow">* 전화번호</td>
+                <td>핸드폰&nbsp;<input type="text" style="width:80px;">-<input type="text" style="width:80px;">-
+                    <input type="text" style="width:80px;"><input type="radio" name="tel">SKT
+                    <input type="radio" name="tel">KT<input type="radio" name="tel">LGU
+                </td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>집/회사&nbsp;<input type="text" style="width:80px;">-<input type="text" style="width:80px;">-
+                    <input type="text" style="width:80px;"><span style="font-size:small; color:blue;">(최소 한개는 입력하세요)</span></td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="yellow">* 직업</td>
+                <td><select name="job">
+                    <option value="">직업을 선택하세요.</option>
+                    <option value="acc">회계사</option>
+                    <option value="dev">개발자</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="yellow">* 이메일</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="yellow">* 메일수신</td>
+                <td><input type="radio" name="mailing" checked>받습니다.
+                    <input type="radio" name="mailing" checked>받지 않습니다.
+                <span style="font-size:small; color:blue;">다양하고 유익한 정보를 메일로 받아보세요.</span></td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="yellow">* SMS수신</td>
+                <td><input type="radio" name="sms">받습니다.
+                    <input type="radio" name="sms" checked>받지 않습니다.</td>
+            </tr>
+            <tr>
+                <td align="right" bgcolor="yellow">* 가입인사</td>
+                <td><textarea name="intro" id="" cols="60" rows="10"></textarea></td>
+            </tr>            
+        </table>
+        <div align="center"><input type="submit" value="확인">&nbsp;<input type="reset" value="다시입력"></div>
+    </form>    
+</body>
+</html>

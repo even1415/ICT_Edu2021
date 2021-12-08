@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex50미디어쿼리웹구조변경.html</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #wrap{
+            width:90%;
+            margin:0 auto;
+            border: thick solid gray;
+            padding:0;
+        }
+        #wrap div{
+            /* border:1px dotted red; */
+            display:inline-block;
+            height:100px;
+            box-sizing: border-box;
+        }
+        #wrap div:first-child{
+            background-color: green;
+        }
+        #wrap div:nth-child(2){
+            background-color: indianred;
+        }
+        #wrap div:nth-child(3){
+            background-color: yellow;
+        }
+        #wrap div:nth-child(4){
+            background-color: blue;
+        }
+        #wrap div:last-child{
+            background-color: greenyellow;
+        }
+        /* 320px이상 수직으로 쌓이도록  */
+        @media all and (min-width:320px) {
+            #wrap div{
+                width:100%;
+            }
+        }
+        /* 768px이상 마지막 요소를 제외한 div들 폭 49.5%. 마지막요소 꽉차게 */
+        @media all and (min-width:768px) {
+            #wrap div{
+                width:49.5%;
+            }
+            #wrap div:last-child{
+                width:100%;
+            }            
+        }
+
+        /* 1024px이상  5개 요소가 균등한 폭으로  */
+        @media all and (min-width:1024px) {
+            #wrap div{
+                width:19.5%;
+            }
+            #wrap div:last-child{
+                width:19.5%;
+            }            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+</html>
+<!-- ex50미디어쿼리웹구조변경.html -->

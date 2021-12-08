@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            width:90%;
+            margin:0 auto;
+            border:thick solid silver;
+        }
+        #wrap div{
+            width:49%;
+            display: inline-block;
+        }
+        img, video{
+            width:100%;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div>
+            <video controls preload="metadata" autoplay>
+                <source src="audios/The Simpsons.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div>
+            <img src="images/cat1.png">
+        </div>
+    </div>
+</body>
+</html>
+<!-- ex56가변미디어.html -->

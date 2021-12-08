@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>semantic layout</title>
+    <!-- 구글폰트 참조 ------------------------------------------------------------ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wght@300&family=Nanum+Pen+Script&family=Sunflower:wght@300&family=Yuji+Mai&display=swap" rel="stylesheet">
+
+    <!-- layout.css외부 파일을 참조하세요 -->
+    <link rel="stylesheet" type="text/css" href="layout.css">
+</head>ㅈ
+<body>
+    <div id="container">
+        <!-- 헤더: 로고 이미지, 검색폼, 목차 등이 모여있음---- -->
+        <header>
+            <!-- 헤더 -->
+            <a><img src="images/logo2.png" alt="로고 이미지"></a>
+        </header>
+        <div class="clear"></div>
+        <!-- 네이게이션 바: 메뉴 ---------------------------- -->
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">Signup</a></li>
+                <li><a href="#">Signin</a></li>
+                <li><a href="#">Board</a></li>
+            </ul>
+        </nav>
+        <div class="clear"></div>
+        <!-- 컨텐츠 영역 ------------------------------------ -->
+        <article>
+            <!-- 컨텐츠(article) -->
+            <section>
+                <h1>공지사항1</h1>
+                <p>
+                    어쩌구 저쩌구...<br>
+                    어쩌구 저쩌구...<br>
+                    어쩌구 저쩌구...<br>
+                </p>
+            </section>
+
+            <section>
+                <h1>베스트 글</h1>
+                <p>
+                    어쩌구 저쩌구...<br>
+                    어쩌구 저쩌구...<br>
+                    어쩌구 저쩌구...<br>
+                </p>
+            </section>
+            <div class="clear"></div>
+            <section>
+                <h1>공지사항2</h1>
+                <p>
+                    어쩌구 저쩌구...<br>
+                    어쩌구 저쩌구...<br>
+                    어쩌구 저쩌구...<br>
+                </p>
+            </section>
+            <section>
+                <h1>공지사항3</h1>
+                <p>
+                    어쩌구 저쩌구...<br>
+                    어쩌구 저쩌구...<br>
+                    어쩌구 저쩌구...<br>
+                </p>
+            </section>
+        </article>
+        <!-- 사이드 영역 ------------------------------------ -->
+        <aside>
+            <!-- 사이드 (aside) -->
+            <nav>
+                <ul>
+                    <li><a href="#">Menu1</a></li>
+                    <li><a href="#">Menu2</a></li>
+                    <li><a href="#">Menu3</a></li>
+                    <li><a href="#">Menu4</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="clear"></div>
+        <!-- 푸터 영역--------------------------------------- -->
+        <footer>
+            &copy;Copyright/회사소개
+        </footer>
+    </div><!--#container end  -->
+</body>
+</html>
+<!-- ex45시멘틱레이아웃.html -->

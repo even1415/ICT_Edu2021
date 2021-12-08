@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <form name = "joinF" action = "join.jsp" method = "post" enctype = "multipart/form-data">
+    <table  width = "70%">
+        <tr>
+            <td colspan = "2" bgcolor = "blue">☞아이디(ID)정보</td>
+            <!-- <td></td> -->
+        </tr>
+        <tr>
+            <td bgcolor = "blue">＊아이디</td>
+            <td><input type = "text" name = "userid">
+            <button>중복검사</button><br>
+             <span style = "color : blue">(4~12자 영자/숫자/한글/특수문자 ID는 사용할수 없습니다)</span></td>
+        </tr>
+        <tr>
+            <td bgcolor = "blue">＊비밀번호</td>
+            <td><input type = "password" name = "pwd">
+            <span style = "color : blue">(4~8자 이내로 만들어주세요)</span></td>
+        </tr>
+        <tr>
+            <td bgcolor = "blue" name = "pwd">＊비밀번호 확인</td>
+            <td><input type = "password">
+            <span style = "color :blue">(위 번호와 같이 입력해주세요)</span></td>
+        </tr>
+        <tr>
+            <td bgcolor = "blue">＊ 본인확인 질문</td>
+            <td><select name = "lang" id = "lang">
+                <option value = "">::질문을 선택하세요::</option>
+                     <option value = "어렸을 때 다녔던 학교는?">어렸을 때 다녔던 학교는?</option>
+                     <option value = "어렸을 적 별명은?">어렸을 적 별명은?</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td bgcolor = "blue">＊본인확인 답</td>
+            <td><input type = "text" name = "anser">
+            <span style = "color : blue">(비밀번호 분실,변경시 본인확인을 위한 정보)</span></td>
+        </tr>
+        <tr>
+            <td colspan = "2" bgcolor = "blue"> ☞개인정보</td>
+            <!-- <td></td> -->
+        </tr>
+        <tr>
+            <td bgcolor = "blue">* 이름(한글)</td>
+            <td><input type = "text" name = "name"> 
+            <span style = "color : blue">(예 : 이승환)</span></td>
+        </tr>
+        <tr>
+            <td bgcolor = "blue">성별</td>
+            <td><label>
+                <input type = "radio" name = "gender" value = "Male" checked = "checked"> 남자
+            </label>
+            <label>
+                    <input type = "radio" name = "gender" value = "FeMale"> 여자 <br>
+            </label></td>
+        </tr>
+        <tr>
+            <td bgcolor = "blue">생년월일</td>
+            <td><input type = "text" name = "birth">년
+            <select name = "year" id = "year"> 
+                <option value = "">선택</option>
+                <option value = "1월">1월</option>
+                <option value = "2월">2월</option>
+                <option value = "3월">3월</option>
+            </select>월
+            <select name = "date" id = "date">
+                <option vlaue = "">선택</option>
+                <option vlaue = "1일">1일</option>
+                <option vlaue = "2일">2일</option>
+                <option vlaue = "3일">3일</option>
+            </select>일
+            <label>
+            <input type = "radio" name = "years" value = "1"> 음력
+        </label>
+            <label>
+            <input type = "radio" name = "years" value = "2"> 양력
+        </label>
+        </td>
+        </tr>
+        <tr>
+            <td bgcolor = "blue"> ＊ 주소</td>
+            <td><input type = "text" name ="adress">
+            <button type="button">우편번호 찾기</button><br>
+            <input type = "text" name = "adress1" style = "width:70%">
+        </td>
+        </tr>
+
+        <tr>
+            <td bgcolor = "blue"> ＊전화번호</td>
+            <td><span style = "color :purple">핸드폰</span>
+            <input type = "text" name = "phone" style = "width:50px"> -
+            <input type = "text" name = "phone" style = "width:50px"> -
+            <input type = "text" name = "phone" style = "width:50px">
+            <label>
+            <input type = "radio" name = "brand" value = "SKT"> SKT
+        </label>
+        <label>
+            <input type = "radio" name = "brand" value = "KTF"> KTF
+        </label>
+        <label>
+            <input type = "radio" name = "brand" value = "LGT"> LGT
+        </label>
+        <br>
+        <span style = "color :purple">집/회사</span>
+        <input type = "text" name = "phone" style = "width:50px"> -
+        <input type = "text" name = "phone" style = "width:50px"> -
+        <input type = "text" name = "phone" style = "width:50px">
+        <span style = "color :blue">최소 한개는 입력하세요</span>
+        </td>
+        </tr>
+        <tr>
+            <td bgcolor = "blue">＊직업</td>
+            <td><select name = "job" id = "job">
+                <option value = "">::직업을 선택하세요::</option>
+                     <option value = "Developer">개발자</option>
+                     <option value = "Designer">디자이너</option>
+            </select>
+        </td>
+        </tr>
+        <tr>
+            <td bgcolor = "blue">이메일</td>
+            <td><input type = "text" name ="mail"></td>
+        </tr>
+        <tr>
+            <td bgcolor = "blue">메일수신</td>
+            <td><label>
+                <input type = "radio" name = "YoN" value = "1" checked> 받습니다.
+            </label>
+                <label>
+                <input type = "radio" name = "YoN" value = "2"> 받지 않습니다.
+            </label></td>
+        </tr>
+        <tr>
+            <td bgcolor = "blue">SMS수신</td>
+            <td>
+                <label>
+                    <input type = "radio" name = "YoN" value = "1"> 받습니다.
+                </label>
+                    <label>
+                    <input type = "radio" name = "YoN" value = "2"> 받지 않습니다.
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor = "blue">가입인사</td>
+            <td><textarea name = "intro" rows = "7" cols = "50"></textarea></td>
+        </tr>
+        <tr>
+            <th colspan = "2"><input type = "submit" value = "확인">
+                <input type = "reset" value = "다시쓰기">
+            </th>
+        </tr>
+    </table>
+    
+</form>
+</body>
+</html>

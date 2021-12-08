@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex25하이퍼링크스타일.html</title>
+    <style>
+        body{
+            font-size:2em;
+            font-family: sans-serif;
+            padding: 1em;
+        }
+        /*상태선택자
+        a:특성{
+            ...
+        }
+        */
+        /*처음 링크: 방문 전*/
+        a:link{
+            text-decoration: none;
+            color:red;
+        }
+        /* 방문후 */
+        a:visited{
+            color:blue;
+        }
+        /* 마우스 클릭시 */
+        a:active{
+            background-color: goldenrod;
+        }
+        /*마우스 오버시*/
+        a:hover{
+            color:indigo;
+            font-size:2.1em;
+            cursor: wait;
+        }
+        /* 클래스가 google인 a요소를 선택해서 배경색을 lime으로 주세요 */
+        a.google{
+            background-color: lime;
+        }
+        /* 클래스가 google이 아닌 a요소를 선택해서 배경을 다른 색 주기 
+        요소:not(배제할 요소)
+        */
+        a:not(.google){
+            background-color: bisque;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>하이퍼링크 스타일 [상태선택자 이용]</h1>
+    <a href="http://www.naver.com">네이버</a><p></p>
+    <a class="google" href="http://www.google.com">구글</a><p></p>
+    <a href="http://www.daum.net">다음</a><p></p>
+    <a href="http://www.nate.com">네이트</a><p></p>
+    <a href="http://www.yahoo.com">야후</a><p></p>
+
+    일반 텍스트
+    <div>헤드라인 텍스트</div>
+</body>
+</html>
+<!-- ex25하이퍼링크스타일.html -->

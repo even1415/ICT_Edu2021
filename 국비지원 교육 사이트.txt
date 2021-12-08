@@ -1,5 +1,5 @@
-https://ictedu.metiscloud.kr/page/lms/learning?m1=home%25&course_id=1457%25
-https://ictedu.metishrd.com/
+https://ictedu.metiscloud.kr/       ---수업
+https://ictedu.metishrd.com/       ---시험
 관리페이지, 테스트 관련
 
 https://www.jandi.com/landing/kr/signin/?redirectUrl=https:%2F%2Fweb210831.jandi.com%2Fapp%2F#!%2F

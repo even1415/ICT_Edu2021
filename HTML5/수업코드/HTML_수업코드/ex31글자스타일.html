@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex31글자스타일.html</title>
+    <style>
+        body{
+            font-family: 고딕, 돋움, sans-serif, serif; /*서체*/
+            font-size:large;
+            /* 글자크기: 단위(px,pt, em, rem, large, x-large, xx-large,
+            small, x-small, xx-small, medium) */
+            font-style:oblique;
+            /* normal, italic, oblique */
+            font-weight: 300;
+            /* 100 ~ 900, normal(400), bold(700), lighter */
+            color:navy;  
+            /* text-align: center;      */
+                 /*left, center, right  */
+        }
+
+        #a1{
+            text-transform: capitalize; 
+            /* 첫글자만 대문자로 */
+        }
+        #a2{
+            text-transform: uppercase;
+        }
+        #a3{
+            text-transform: lowercase;
+        }
+    </style>
+</head>
+<body>
+    <h1>font 또는 텍스트 스타일</h1>
+    <h2>기본</h2>
+    <h2 style="text-decoration: overline;">윗줄</h2>
+    <h2 style="text-decoration: underline;">밑줄</h2>
+    <h2 style="text-decoration: line-through;">취소선</h2>
+    일반텍스트
+    <hr>
+    <h1 style="color:tomato;text-shadow: 4px 2px 7px green;">안녕 HTML - Text Shadow</h1>
+    <!-- text-shadow(그림자): x y 번짐크기 색상 순으로 기술 -->
+    <hr>
+    <table border="1" style="width:80%;height:400px">
+        <tr>
+            <td width="50%" height="200px" style="vertical-align: bottom;">
+                수직 정렬
+                <!-- 
+                    text-align(수평정렬): left, center, right
+                    vertical-align(수직정렬):top, middle, bottom
+                 -->
+            </td>
+            <td style="text-align:center">수평 정렬</td>
+        </tr>
+        <tr>
+            <td>    
+                <div id="a1">abc(첫글자를 대문자로)</div>
+                <div id="a2">abc(모두 대문자로)</div>
+                <div id="a3">abcDEF(모두 소문자로)</div>
+            </td>
+            <td>
+                문자간격<br>
+                <span style="letter-spacing: 10px;">문자간격</span><br>
+                <span style="word-spacing: 20px;">단어 간격</span>
+            </td>
+        </tr>
+    </table>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+</body>
+</html>
+<!-- ex31글자스타일.html -->

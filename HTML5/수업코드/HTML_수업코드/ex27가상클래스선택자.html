@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 요소:first-child :해당 요소 중 첫번째 자식을 선택한다.
+           요소:last-child : 마지막 자식을 선택한다
+         */
+         /* p요소 중 첫째 자식을 선택해서 
+         테두리 : thick dashed 색상*/
+        p:first-child{
+            border: thick dashed chocolate;
+        }
+        p:last-child{
+            background-color: coral;
+        }
+        /*[1] ol>li중에서 첫째자식 선택해서 글자색:blue */
+        ol>li:first-child{
+            color:blue;
+            font-weight: bold;
+        }
+         /* [2] ol>li중 마지막자식 선택해서 배경색:알아서 */
+        ol>li:last-child{
+            background-color: cyan;
+        }
+
+         /* [3] ol>li중 둘째 자식 선택해서 글자색:maroon 글자크기 :2배 */
+        /* ol>li:first-child+li{
+            color:maroon;
+            font-size:2em;
+        } */
+        ol>li:nth-child(4){
+            color:lime;
+            font-size: 2em;
+        }
+        /* 홀수번째들만 찾아서 배경색 주기 */
+        ol>li:nth-child(2n+1){
+            background-color:lawngreen;
+        }
+        ol>li:nth-child(2n){
+            border: thick dotted hotpink;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <p>body first child</p>
+    <h1>Welcome to my homepage</h1>
+    <p>body not first child</p>
+    <div>
+        <p>div first child</p>
+        <p>div not first child</p>
+    </div>
+    <hr color="red">
+    <ol>
+        <li>Espresso</li>
+        <li>Americano</li>
+        <li>CaffeLatte</li>
+        <li>Cappuccino</li>
+        <li>CafeMocha</li>
+        <li>Carame Latte</li>
+    </ol>
+
+</body>
+</html>

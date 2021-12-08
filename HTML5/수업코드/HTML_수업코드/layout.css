@@ -1,0 +1,121 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;  
+    box-sizing: border-box;  
+}
+body{    
+    /* font-family: 'Sunflower', sans-serif;     */
+    font-family: 'M PLUS Code Latin', sans-serif;
+    /* font-family: 'Nanum Pen Script', cursive; */
+    font-size: 16px;
+    color:navy;
+}
+#container{
+    width:1024px;
+    height:auto;
+    margin: 0 auto; /*상하: 0, 좌우: auto*/
+    /* border: 1px solid gray; */
+}
+.clear{
+    clear:both; /*float설정을 해제*/
+}
+/* header----------------------------- */
+header{
+    border: 1px solid silver;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top:10px;
+}
+header img{
+    width: 95%;
+    text-align: center;
+}
+/* nav --------------------------------- */
+nav{
+    padding: 5px;
+    background-color: rgba(225,232,240,1);
+    height: 30px;
+    border-radius: 5px;
+}
+nav ul{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+}
+nav ul li{
+    float:left;
+    padding:0 5px 0 0; /*top>right>bottom>left*/
+}
+nav ul li a{
+    display:block; /*블럭으로 지정해서 공간 확보*/
+    text-decoration: none;
+    padding: 2px 20px 3px 20px;
+    color:rgb(50,50,50);
+}
+nav ul li a:hover{
+    background-color: rgb(100,150,255);
+    color:rgb(255,255,255);
+    border-radius: 5px;
+}
+/* article-------------------- */
+article{
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    width:75%;
+    height: 500px;
+    margin:3px 0;
+    padding:10px;
+    float:left;
+}
+article section{
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding:10px;
+    margin:5px;
+    width:48.5%;
+    float:left;
+}
+/* aside-------------------------- */
+aside{
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    margin:3px 0;
+    width:24%;
+    float:right;
+    height: 500px;
+}
+aside nav{
+    border:none;
+    background: none;
+}
+aside nav ul{
+    list-style-type: none;
+}
+aside nav ul li{
+    padding: 0 5px;
+}
+aside nav ul li a{
+    padding: 5px 0;
+    width: 170px;
+}
+aside nav ul li a:hover{
+    background-color: transparent; /*마우스오버시 투명하게*/
+    color:navy;
+    font-weight: bold;
+}
+/* footer------------------------ */
+footer{
+    background-color: rgba(225,232,240,1);
+    border-radius: 5px;
+    border:1px solid silver;
+    margin:3px 0;
+    padding:10px 20px;
+    font-size:0.8em;
+    height:40px;
+    line-height: 30px;
+}
+
+
+
+

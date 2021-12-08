@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex34float.html</title>
+	<style>
+		img{
+			float: right;
+		}
+		.cls{
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+    <h1>float/clear속성</h1>
+
+ <img src="images/a.png"> 
+   : 스타일시트를 이용해서
+	옆에 텍스트를 배치하고자 할 때 사용하는 속성: float.
+	float속성은 하나의 라인에 이미지와 글씨가 함께 있을 때
+	이미지를 왼쪽이나 오른쪽에 배치하고, 나머지 글씨들이
+	이미지 주변으로 흐르도록 하는 속성.
+	이미지 뿐 아니라 모든 block요소에 대해  float속성을
+	사용할 수 있으며, 속성 값에는 none, left, right를 
+	사용할 수 있다.
+	<hr color="red">
+	<hr color="blue" style="clear:left;">
+	<img src="images/cat1.png"> 이미지 옆에 텍스트의 배치를
+	<div class="cls">해제하고자 할 때 사용하는 속성: clear
+	clear는 '취소하다'는 의미로 속성값으로는 left,right,both,none
+	이 오며, float:left를 취소하려면 clear:left,
+	float:right를 취소하려면 clear:right, clear:both는 오른쪽 왼쪽
+	모두 취소할 때 사용한다.
+	</div>
+</body>
+</html>

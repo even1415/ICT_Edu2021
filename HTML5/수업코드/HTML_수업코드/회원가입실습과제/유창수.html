@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <form>
+        <table width="800px">
+            <tr bgcolor="sky blue">
+                <td colspan="2"><b>아이디(ID)정보</b></td>
+                <!--<td></td>-->
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">* 아이디</td>
+                <td><input type="text" name="userid"><input type="reset" value="중복검사">
+                    <br><span style="color:blue">(4~12자 영자/숫자 가능,한글,특수문자 ID는 사용할 수 없습니다.)</span></td>
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">* 비밀번호</td>
+                <td><input type="password" name="pwd">
+                    <span style="color:blue">(4~8자 이내로 만들어 주세요)</span></td>
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">* 비밀번호 확인</td>
+                <td><input type="password" name="pwd">
+                    <span style="color:blue">(위 번호와 같이 입려해 주세요)</span></td>
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">* 본인확인 질문</td>
+                <td><select name=""><option>질문을 선택하세요</option></select></td>
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">* 본인확인 답</td>
+                <td><input type="text" name=""><span style="color:blue">(비밀번호 분실, 변경시 본인확인을 위한 정보)</span></td>
+            </tr>
+            <tr bgcolor="sky blue">
+                <td colspan="2"><b>개인정보</b></td>
+                <!--<td></td>-->
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">* 이름(한글)</td>
+                <td><input type="text" name="name"><span style="color:blue">(예:박정현)</span></td>
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">성별</td>
+                <td><input type="radio" name="gender" value="Male">남
+                    <input type="radio" name="gender" value="Female">여</td>
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">생년월일</td>
+                <td><input type="text" name="birth date">년
+                    <select name="month"><option>선택</option></select>월
+                    <select name="day"><option>선택</option></select>일
+                    <input type="radio" name="calendar" value="lunar calendar">음력
+                    <input type="radio" name="calendar" value="solar calendar">양력</td>
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">* 주소</td>
+                <td><input type="text" name="address"><button type="button">우편번호 찾기</button>
+                    <br><input type="text" name="address" style="width:500px"></td>
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">* 전화번호</td>
+                <td><span style="color:red">핸드폰</span>
+                    <input type="text" name="phone number" style="width:60px">-
+                    <input type="text" name="phone number" style="width:60px">-
+                    <input type="text" name="phone number" style="width:60px">
+                    <input type="radio" name="telecom" value="SKT">SKT
+                    <input input type="radio" name="telecom" value="KTF">KTF
+                    <input input type="radio" name="telecom" value="LGT">LGT
+                    <br><span style="color:red">집/회사</span>
+                    <input type="text" name="phone number" style="width:60px">-
+                    <input type="text" name="phone number" style="width:60px">-
+                    <input type="text" name="phone number" style="width:60px">
+                    <span style="color:blue">최소 한개는 입력하세요</span></td>
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">* 직업</td>
+                <td><select name="job"><option>직업을 선택하세요</option></select></td>
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">이메일</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">메일수신</td>
+                <td><input type="radio" name="email receipt" value="받습니다.">받습니다.
+                    <input type="radio" name="email receipt" value="받지 않습니다.">받지 않습니다.
+                    <span style="color:blue">다양하고 유익한 정보, 메일로 받아보세요.</span></td>
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">SMS수신</td>
+                <td><input type="radio" name="SMS receipt" value="받습니다.">받습니다.
+                    <input type="radio" name="SMS receipt" value="받지 않습니다.">받지 않습니다.</td>
+            </tr>
+            <tr>
+                <td bgcolor="ivory" align="right">가입인사</td>
+                <td><input type="text" name="figure" style="width:300px;height:100px"></td>
+            </tr>
+            <tr align="center">
+                <td colspan="2">
+                    <input type="submit" value="확인">
+                    <input type="reset" value="다시입력">
+                </td>
+                <!--<td></td>-->
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <!--<h1 bgcolor="red">→아이디(ID)정보</h1> <br>-->
+
+    <table>
+       <tr>
+      <td bgcolor="pink">  →아이디(ID)정보 </td>
+      <td> 
+        </tr>
+        <tr>
+      <td>* 아이디 <input type="text" > 
+      <input type="button" value="중복확인" onclick="alert('사용 가능한 아이디입니다')"> </td>
+      </tr>
+
+      
+      <tr>
+      <td>* 비밀번호<input type="password" >
+      <span style="color:blue">*(4~8자 이내로 만들어주세요.)</span> </td>
+        </tr>
+    <br>
+    <tr>
+      <td>* 비밀번호 확인<input type="password" name="pwd">
+      <span style="color:blue">*(위 번호와 같이 입력해주세요.)</span> </td><br>
+      </tr>
+       <br>
+       <tr>
+       <td>*본인확인 질문
+      <select name="ekq">
+        <option>:::질문을 선택하세요:::</option>
+        <option >나의 생일은?</option>>
+        <option>나의 출생지는?</option>>
+        <option>나의 보물 1호는?</option>>
+    </select> </td> 
+</tr><br>
+<tr>
+    <td>* 본인확인 답<input type="text" name="ekq">
+      <span style="color:blue">(비밀번호 분실, 변경시 본인확인을 위한 정보)</span><br>
+    </td></tr>
+    </table>
+    <table>
+   <tr> <td bgcolor="pink">→개인정보 </td></tr>
+   <tr> 
+   <td>*이름(한글)<input type="text"> 
+    <span style="color:rgb(40, 27, 219)">(예:박정현)</span> </td>
+</tr>
+<tr>
+   <td> 성별 
+       <label>
+            <input type="radio" name="gender" value="Male">남
+       </label>
+         <label>    <input type="radio" name="gender" value="Female" >여<br>
+            </label> </td>
+            </tr>
+
+            <tr>
+          <td>  생년월일 <input type="text"> 년
+            <select name="dnjf">
+                <option>:::선택:::</option>
+                <option >1월</option>>
+                <option>2월</option>>
+                <option>3월</option>>
+                <option>3월</option>>
+                <option>4월</option>>
+                <option>5월</option>>
+                <option>6월</option>>
+                <option>7월</option>>
+                <option>8월</option>>
+                <option>9월</option>>
+                <option>10월</option>>
+                <option>11월</option>>
+                <option>12월</option>>
+            </select>
+            월
+            <select name="dnjf">
+                <option>:::선택:::</option>
+                <option >1일</option>>
+                <option>2일</option>>
+                <option>3일</option>>
+                <option>3일</option>>
+                <option>4일</option>>
+                <option>5일</option>>
+                <option>6일</option>>
+                <option>7일</option>>
+                <option>8일</option>>
+                <option>9일</option>>
+                <option>10일</option>>
+                <option>11일</option>>
+                <option>12일</option>>
+                </select>
+                일
+            <label> 
+            <input type="radio">음력
+            </label>
+            <input type="radio" >양력 <br>
+            </td>
+            </tr>
+            <tr>
+         <td>* 주소 <input type="text"> 
+         <input type="button" value="우편 번호 찾기"> <br>
+        <input type="text" style="width:50%">
+        </td>
+         </tr> 
+         <tr>
+             <td>*전화번호
+                 <input type="text"style="width:5%">-
+                 <input type="text"style="width:5%">-
+                 <input type="text"style="width:5%">
+                <input type="radio"> SKT
+                <input type="radio"> KTF
+                <input type="radio"> LGT
+                <br>
+                집/회사 
+                <input type="text"style="width:5%">-
+                 <input type="text"style="width:5%">-
+                 <input type="text"style="width:5%">
+                 <span style="color:blue">
+                    (최소 한개는 입력하세요.)</span>
+             </td>
+         </tr>
+         <tr>
+             <td>*직업
+                <select name="job">
+                    <option>직업을 선택하세요.</option>
+                    <option >직장인</option>>
+                    <option>학생</option>>
+                    <option>무직</option>>
+                    <option>현장직</option>>
+                    <option>운전사</option>>
+                    <option>기술직</option>>
+             </td>
+         </tr>
+         <tr>
+             <td>이메일
+                <input type="text">
+             </td>
+         </tr>
+         <tr>
+             <td>메일수신
+                 <input type="radio">받습니다.
+                 <input type="radio">받지 않습니다.
+                 <span style="color:blue">
+                    (다양하고 유익한 정보,메일로 받아보세요.)</span>
+             </td>
+         </tr>
+         <tr>
+             <td>SNS수신
+                <input type="radio">받습니다.
+                <input type="radio">받지 않습니다.
+             </td>
+         </tr>
+         <tr>
+             <td>가입인사
+                <textarea name="intro" rows="7" cols="50"></textarea><br>
+                <input type="button" value="확인">
+                <input type="reset" value="다시입력">
+                
+            </td>
+         </tr>
+         
+    </table>
+</body>
+</html>
